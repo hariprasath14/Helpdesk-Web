@@ -1,0 +1,20 @@
+/*
+ * Satoshi, self-hosted (ITF Free Font License, see src/assets/fonts/Satoshi-LICENSE.txt).
+ * One variable file covers every weight from 300 to 900. The licence allows using it in our own
+ * app; it must not be offered to customers as a font choice for their own content.
+ */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/Satoshi-VariableItalic.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}

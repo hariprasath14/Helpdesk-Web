@@ -1,0 +1,105 @@
+/*
+ * Helpdesk design tokens: the single source for colour. They mirror the Figma variable
+ * collections "Helpdesk Brand" and "Helpdesk Core" (file SKCwp41FF3pelNAUsWCr6V).
+ *
+ * Rules:
+ * - Components use semantic tokens (Tailwind classes such as bg-brand-button, text-ink), never a
+ *   raw hex value and never a brand shade directly.
+ * - The brand colour is switched with one attribute on <html>: data-brand="help-teal" or
+ *   "ocean-cyan". Status, SLA, priority and feedback colours never change with the brand.
+ * - Every text/background pair used together passes WCAG AA (4.5:1). Contrast is noted next to
+ *   the pairs that are close.
+ */
+
+/* ---------- Brand palettes (one block per option) ---------- */
+
+:root,
+[data-brand='help-teal'] {
+  --brand-50: #ecf7f6;
+  --brand-100: #d8f0ed;
+  --brand-200: #added9;
+  --brand-500: #0e9f8e;
+  /* Figma has #0C8779 (4.41:1 with white, just under AA); 1.5% darker passes at 4.53:1. */
+  --brand-600: #0c8577;
+  --brand-700: #0a6f63;
+  --brand-900: #053c36;
+}
+
+[data-brand='ocean-cyan'] {
+  --brand-50: #ebf6f9;
+  --brand-100: #d7edf3;
+  --brand-200: #abdae5;
+  --brand-500: #0891b2;
+  --brand-600: #077b97;
+  --brand-700: #06667d;
+  --brand-900: #033744;
+}
+
+:root {
+  /* ---------- Brand roles (what components use) ---------- */
+  --brand-button-bg: var(--brand-600); /* white text: 4.53:1 teal, 4.90:1 cyan */
+  --brand-button-bg-hover: var(--brand-700);
+  --brand-link: var(--brand-700); /* 6.06:1 on white; 600 is too light for small text */
+  --brand-tint-bg: var(--brand-50);
+  --brand-tint-bg-hover: var(--brand-100);
+  --brand-tint-text: var(--brand-700); /* 5.54:1 on brand-50 */
+  --brand-selected-row: var(--brand-50);
+  --brand-avatar-bg: var(--brand-100);
+  --brand-avatar-text: var(--brand-700);
+  --brand-focus: var(--brand-500);
+  --brand-toast-action: var(--brand-200); /* 11:1 on the dark toast */
+
+  /* ---------- App shell (follows the brand) ---------- */
+  /* Decided 2026-10-25: the sidebar uses the brand's darkest shade (was a fixed navy
+     #062947), so it changes with the brand mode. Figma: shell/sidebar aliases primary/900. */
+  --shell-sidebar: var(--brand-900);
+  --shell-sidebar-hover: rgb(255 255 255 / 0.08);
+  --shell-sidebar-active: rgb(255 255 255 / 0.14); /* white text 8.2:1 teal, 8.5:1 cyan */
+  --shell-sidebar-indicator: var(--brand-200); /* 3px active marker, 5.5:1 */
+  --shell-sidebar-text: #ffffff; /* 12.3:1 teal, 12.9:1 cyan */
+  --shell-sidebar-muted: #afc2d6; /* 6.8:1 teal, 7.1:1 cyan; 5.3:1 on hover */
+
+  /* ---------- Neutrals ---------- */
+  --ink: #1d2026; /* headings */
+  --wordmark: #002535; /* the logo's wordmark on light backgrounds */
+  --ink-body: #212529;
+  --ink-muted: #505756; /* 7.4:1 on white, 6.8:1 on the page background */
+  --ink-subtle: #676d7b; /* hints and counts: 5.2:1 white, 4.8:1 page, 4.7:1 sunken */
+  --ink-inverse: #ffffff;
+  --surface: #ffffff;
+  --surface-page: #f5f6f8;
+  --surface-sunken: #f1f3f5;
+  --surface-inverse: #1d2026;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --overlay: rgb(17 24 39 / 0.45);
+  --scrollbar: #c9ced6; /* thin scrollbar thumb (Step 5b) */
+  --scrollbar-hover: #a9b0bb;
+
+  /* ---------- Feedback (fixed) ---------- */
+  --success-bg: #e8f7ee;
+  --success-text: #1a7f45;
+  --success-dot: #22a55b;
+  --warning-bg: #fff4e0;
+  --warning-text: #a35a00;
+  --warning-dot: #f08c00;
+  --danger-bg: #fdecec;
+  --danger-text: #c42b2b;
+  --danger-dot: #e03131;
+  --danger-button: #d92d20; /* white text 4.83:1 */
+  --danger-button-hover: #b42318;
+  --info-bg: #e7f1ff;
+  --info-text: #1d5fd1;
+  --info-dot: #2f7cf6;
+  --neutral-bg: #f1f3f5;
+  --neutral-text: #495057;
+  --neutral-dot: #868e96;
+
+  /* Accent orange, for highlights only (never text on white). */
+  --accent: #ffa800;
+
+  /* ---------- Elevation ---------- */
+  --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.05);
+  --shadow-md: 0 4px 12px rgb(16 24 40 / 0.08);
+  --shadow-lg: 0 12px 32px rgb(16 24 40 / 0.14);
+}

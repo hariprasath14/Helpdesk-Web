@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+
+# Test output
+playwright-report/
+test-results/
+
+# Local settings (see .env.example)
+.env
+.env.*
+!.env.example
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Real names of the company and the dev server: kept on the owner's computer only (docs/BRANDING.md)
+*.local.env
+*.local.md

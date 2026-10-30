@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+@import './fonts.css';
+@import './tokens.css';
+
+/*
+ * Tailwind reads the tokens through `inline`, so classes such as bg-brand-button resolve to the
+ * CSS variable at runtime and follow the data-brand switch. Tailwind's default colour palette is
+ * removed: only Helpdesk tokens can be used.
+ */
+@theme inline {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-900: var(--brand-900);
+  --color-brand-button: var(--brand-button-bg);
+  --color-brand-button-hover: var(--brand-button-bg-hover);
+  --color-brand-link: var(--brand-link);
+  --color-brand-tint: var(--brand-tint-bg);
+  --color-brand-tint-hover: var(--brand-tint-bg-hover);
+  --color-brand-tint-text: var(--brand-tint-text);
+  --color-brand-selected: var(--brand-selected-row);
+  --color-brand-avatar: var(--brand-avatar-bg);
+  --color-brand-avatar-text: var(--brand-avatar-text);
+  --color-brand-focus: var(--brand-focus);
+  --color-brand-toast-action: var(--brand-toast-action);
+
+  --color-sidebar: var(--shell-sidebar);
+  --color-sidebar-hover: var(--shell-sidebar-hover);
+  --color-sidebar-active: var(--shell-sidebar-active);
+  --color-sidebar-indicator: var(--shell-sidebar-indicator);
+  --color-sidebar-text: var(--shell-sidebar-text);
+  --color-sidebar-muted: var(--shell-sidebar-muted);
+
+  --color-ink: var(--ink);
+  --color-wordmark: var(--wordmark);
+  --color-ink-body: var(--ink-body);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-ink-inverse: var(--ink-inverse);
+  --color-surface: var(--surface);
+  --color-surface-page: var(--surface-page);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-overlay: var(--overlay);
+
+  --color-success-bg: var(--success-bg);
+  --color-success-text: var(--success-text);
+  --color-success-dot: var(--success-dot);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-text: var(--warning-text);
+  --color-warning-dot: var(--warning-dot);
+  --color-danger-bg: var(--danger-bg);
+  --color-danger-text: var(--danger-text);
+  --color-danger-dot: var(--danger-dot);
+  --color-danger-button: var(--danger-button);
+  --color-danger-button-hover: var(--danger-button-hover);
+  --color-info-bg: var(--info-bg);
+  --color-info-text: var(--info-text);
+  --color-info-dot: var(--info-dot);
+  --color-neutral-bg: var(--neutral-bg);
+  --color-neutral-text: var(--neutral-text);
+  --color-neutral-dot: var(--neutral-dot);
+  --color-accent: var(--accent);
+
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+}
+
+@layer base {
+  html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface-page font-sans text-sm text-ink-body antialiased;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-ink;
+  }
+
+  /* Thin scrollbars on every scrolling area (Step 5b): about 6px, grey thumb, no track. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover);
+  }
+
+  /* One visible focus style everywhere, for keyboard users. */
+  :focus-visible {
+    outline: 2px solid var(--brand-focus);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
