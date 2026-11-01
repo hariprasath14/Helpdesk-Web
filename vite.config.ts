@@ -1,4 +1,5 @@
 /// <reference types="vitest/config" />
+import { readFileSync } from 'node:fs';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
@@ -10,6 +11,26 @@ const productName = (): Plugin => ({
   transformIndexHtml: (html) => html.replaceAll('%PRODUCT_NAME%', PRODUCT_NAME),
 });
 
+/**
+ * The demo build (--mode demo) answers its API calls in a service worker (src/demo). This serves
+ * MSW's worker script to the dev server and adds it to the build; other builds never ship it.
+ */
+const demoWorker = (): Plugin => {
+  const script = () => readFileSync('node_modules/msw/lib/mockServiceWorker.js', 'utf8');
+  return {
+    name: 'demo-worker',
+    configureServer(server) {
+      server.middlewares.use('/mockServiceWorker.js', (_request, response) => {
+        response.setHeader('Content-Type', 'text/javascript');
+        response.end(script());
+      });
+    },
+    generateBundle() {
+      this.emitFile({ type: 'asset', fileName: 'mockServiceWorker.js', source: script() });
+    },
+  };
+};
+
 export default defineConfig(({ mode }) => {
   // Where the dev server forwards API calls (helpdesk-api's npm run dev). Read from .env or the
   // shell; it has no VITE_ prefix, so it is never baked into the build.
@@ -19,7 +40,7 @@ export default defineConfig(({ mode }) => {
   const toApi = { target: apiTarget, changeOrigin: false };
 
   return {
-    plugins: [react(), tailwindcss(), productName()],
+    plugins: [react(), tailwindcss(), productName(), ...(mode === 'demo' ? [demoWorker()] : [])],
     server: {
       port: 5173,
       // Fail instead of silently moving to another port: links in emails point at 5173.

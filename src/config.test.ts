@@ -32,6 +32,15 @@ describe('loadConfig', () => {
     expect(() => loadConfig({ VITE_DESIGN_PREVIEW: 'yes' })).toThrow(/VITE_DESIGN_PREVIEW/);
   });
 
+  it('runs the demo on its own address and refuses a malformed demo flag', () => {
+    expect(loadConfig({}).demo).toBe(false);
+    expect(loadConfig({ VITE_DEMO: 'true' }, 'helpnest-demo.pages.dev')).toMatchObject({
+      demo: true,
+      appDomain: 'helpnest-demo.pages.dev',
+    });
+    expect(() => loadConfig({ VITE_DEMO: 'yes' })).toThrow(/VITE_DEMO/);
+  });
+
   it('lists every problem at once', () => {
     expect(() => loadConfig({ VITE_API_URL: 'nope', VITE_DESIGN_PREVIEW: 'yes' })).toThrow(
       /VITE_API_URL[\s\S]*VITE_DESIGN_PREVIEW/,

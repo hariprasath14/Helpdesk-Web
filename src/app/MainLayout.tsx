@@ -101,6 +101,15 @@ export function MainLayout() {
             notifications: <NotificationBell />,
           }}
         >
+          {config.demo && (
+            <p
+              role="status"
+              className="mb-4 rounded-lg bg-info-bg px-4 py-3 text-sm text-info-text"
+            >
+              This is a demo with sample data. Try anything: your changes stay in this browser tab
+              and reset when you reload.
+            </p>
+          )}
           {twoFactor.enabled && twoFactor.recoveryCodesLeft <= 2 && (
             <p
               role="status"

@@ -10,9 +10,11 @@ import { hostKind } from './host';
 import { createQueryClient } from './query-client';
 import { createRoutes } from './routes';
 
-const router = createBrowserRouter(
-  createRoutes(config, hostKind(config.appDomain, window.location.hostname)),
-);
+// The demo has one address, which opens its sample workspace.
+const host = config.demo
+  ? ({ kind: 'workspace', subdomain: 'demo' } as const)
+  : hostKind(config.appDomain, window.location.hostname);
+const router = createBrowserRouter(createRoutes(config, host));
 
 /** Providers shared by every page: brand, server-data cache, toasts, tooltips and the router. */
 export function App() {

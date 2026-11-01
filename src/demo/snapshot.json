@@ -1,0 +1,3578 @@
+{
+  "takenAt": "2026-11-01T09:36:19.400Z",
+  "me": {
+    "user": {
+      "id": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+      "name": "Priya Nair",
+      "email": "priya@orbit-cycles.example",
+      "theme": null
+    },
+    "workspace": {
+      "id": "01a19676-9bd0-75d4-86c8-e20cd482fef5",
+      "name": "Orbit Cycles",
+      "subdomain": "orbit",
+      "timezone": "Asia/Kolkata"
+    },
+    "role": "admin",
+    "isOwner": true,
+    "permissions": [
+      "tickets.work",
+      "tickets.assign_any",
+      "tickets.merge",
+      "tickets.delete",
+      "contacts.edit",
+      "contacts.delete",
+      "canned_responses.manage_shared",
+      "views.manage_shared",
+      "members.view",
+      "members.manage",
+      "teams.manage",
+      "settings.manage",
+      "audit_log.view"
+    ],
+    "twoFactor": {
+      "enabled": false,
+      "recoveryCodesLeft": 0,
+      "required": false,
+      "setupRequired": false
+    },
+    "csrfToken": "npEqaTxOrknVZ73TZ61q51WNuSPSjiRdxdiyAcJYfwg"
+  },
+  "members": {
+    "members": [
+      {
+        "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+        "name": "Arjun Mehta",
+        "email": "arjun@orbit-cycles.example",
+        "role": "agent",
+        "isOwner": false,
+        "status": "active",
+        "twoFactorEnabled": false,
+        "lastActiveAt": "2026-11-01T09:35:19.567Z",
+        "joinedAt": "2026-11-01T09:35:19.544Z",
+        "teams": [
+          {
+            "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+            "name": "Orders & Delivery",
+            "isLead": true
+          }
+        ]
+      },
+      {
+        "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+        "name": "Kabir Singh",
+        "email": "kabir@orbit-cycles.example",
+        "role": "supervisor",
+        "isOwner": false,
+        "status": "active",
+        "twoFactorEnabled": false,
+        "lastActiveAt": "2026-11-01T09:35:21.542Z",
+        "joinedAt": "2026-11-01T09:35:21.526Z",
+        "teams": [
+          {
+            "id": "01a19676-aaa5-710f-b777-2e3c85454ae6",
+            "name": "Returns & Warranty",
+            "isLead": true
+          }
+        ]
+      },
+      {
+        "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+        "name": "Neha Iyer",
+        "email": "neha@orbit-cycles.example",
+        "role": "agent",
+        "isOwner": false,
+        "status": "active",
+        "twoFactorEnabled": false,
+        "lastActiveAt": "2026-11-01T09:35:20.547Z",
+        "joinedAt": "2026-11-01T09:35:20.527Z",
+        "teams": [
+          {
+            "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+            "name": "Orders & Delivery",
+            "isLead": false
+          },
+          {
+            "id": "01a19676-aaa5-710f-b777-2e3c85454ae6",
+            "name": "Returns & Warranty",
+            "isLead": false
+          }
+        ]
+      },
+      {
+        "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+        "name": "Priya Nair",
+        "email": "priya@orbit-cycles.example",
+        "role": "admin",
+        "isOwner": true,
+        "status": "active",
+        "twoFactorEnabled": false,
+        "lastActiveAt": "2026-11-01T09:35:18.464Z",
+        "joinedAt": "2026-11-01T09:35:17.972Z",
+        "teams": []
+      }
+    ],
+    "invitations": []
+  },
+  "people": {
+    "people": [
+      {
+        "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+        "name": "Arjun Mehta",
+        "role": "agent",
+        "status": "active"
+      },
+      {
+        "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+        "name": "Kabir Singh",
+        "role": "supervisor",
+        "status": "active"
+      },
+      {
+        "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+        "name": "Neha Iyer",
+        "role": "agent",
+        "status": "active"
+      },
+      {
+        "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+        "name": "Priya Nair",
+        "role": "admin",
+        "status": "active"
+      }
+    ]
+  },
+  "teams": {
+    "teams": [
+      {
+        "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+        "name": "Orders & Delivery",
+        "description": "Order status, couriers and delivery dates",
+        "members": [
+          {
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta",
+            "email": "arjun@orbit-cycles.example",
+            "role": "agent",
+            "status": "active",
+            "isLead": true
+          },
+          {
+            "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+            "name": "Neha Iyer",
+            "email": "neha@orbit-cycles.example",
+            "role": "agent",
+            "status": "active",
+            "isLead": false
+          }
+        ],
+        "createdAt": "2026-11-01T09:35:21.719Z",
+        "updatedAt": "2026-11-01T09:35:21.719Z"
+      },
+      {
+        "id": "01a19676-aaa5-710f-b777-2e3c85454ae6",
+        "name": "Returns & Warranty",
+        "description": "Returns, refunds, damage and warranty claims",
+        "members": [
+          {
+            "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+            "name": "Kabir Singh",
+            "email": "kabir@orbit-cycles.example",
+            "role": "supervisor",
+            "status": "active",
+            "isLead": true
+          },
+          {
+            "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+            "name": "Neha Iyer",
+            "email": "neha@orbit-cycles.example",
+            "role": "agent",
+            "status": "active",
+            "isLead": false
+          }
+        ],
+        "createdAt": "2026-11-01T09:35:21.765Z",
+        "updatedAt": "2026-11-01T09:35:21.765Z"
+      }
+    ]
+  },
+  "views": {
+    "views": [
+      {
+        "id": "01a19676-af11-7088-8b66-54b8c8fef23e",
+        "name": "Business customers",
+        "filters": {
+          "q": "Pedal Partners"
+        },
+        "sort": "updated",
+        "shared": false,
+        "mine": true,
+        "ownerName": "Priya Nair",
+        "canEdit": true
+      },
+      {
+        "id": "01a19676-aef8-7438-90a8-bf0f4d5f61f4",
+        "name": "Damaged deliveries",
+        "filters": {
+          "status": ["open", "pending", "waiting_on_customer"],
+          "tag": ["damage"]
+        },
+        "sort": "priority",
+        "shared": true,
+        "mine": true,
+        "ownerName": "Priya Nair",
+        "canEdit": true
+      }
+    ]
+  },
+  "tags": {
+    "tags": ["checkout", "damage", "frame", "payments", "sales", "warranty"]
+  },
+  "customFields": {
+    "ticket": {
+      "standardFields": [
+        {
+          "key": "contactId",
+          "label": "Requester",
+          "description": "Contact; a new one can be added by name and email or phone",
+          "rule": "Required"
+        },
+        {
+          "key": "subject",
+          "label": "Subject",
+          "description": "Text, up to 200 characters",
+          "rule": "Required"
+        },
+        {
+          "key": "description",
+          "label": "Description",
+          "description": "The first message, plain text",
+          "rule": null
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "description": "Open, Pending, Waiting on customer, Resolved or Closed; starts Open",
+          "rule": "Required"
+        },
+        {
+          "key": "priority",
+          "label": "Priority",
+          "description": "Low, Medium, High or Urgent; starts Medium",
+          "rule": "Required"
+        },
+        {
+          "key": "type",
+          "label": "Type",
+          "description": "Question, Incident, Problem or Feature request",
+          "rule": null
+        },
+        {
+          "key": "teamId",
+          "label": "Team",
+          "description": "One of your teams",
+          "rule": null
+        },
+        {
+          "key": "assigneeUserId",
+          "label": "Assignee",
+          "description": "An active member; agents can only take a ticket or give it back",
+          "rule": null
+        },
+        {
+          "key": "tags",
+          "label": "Tags",
+          "description": "Up to 20 free-text tags",
+          "rule": null
+        }
+      ],
+      "fields": [
+        {
+          "id": "01a19676-ab84-70a6-8504-028fd88e473f",
+          "recordType": "ticket",
+          "key": "order_number",
+          "label": "Order number",
+          "helpText": "From the order confirmation email, for example OC-10482",
+          "type": "text",
+          "required": "never",
+          "archived": false,
+          "position": 0,
+          "checkboxDefault": null,
+          "choices": []
+        },
+        {
+          "id": "01a19676-aba6-731a-adfd-de793346ac83",
+          "recordType": "ticket",
+          "key": "bike_model",
+          "label": "Bike model",
+          "helpText": null,
+          "type": "dropdown",
+          "required": "never",
+          "archived": false,
+          "position": 1,
+          "checkboxDefault": null,
+          "choices": [
+            {
+              "id": "01a19676-abaa-7120-8a95-8b096807cbf9",
+              "label": "Roadster 2",
+              "removed": false,
+              "isDefault": false
+            },
+            {
+              "id": "01a19676-abab-7345-9290-5ba665198415",
+              "label": "Trail X",
+              "removed": false,
+              "isDefault": false
+            },
+            {
+              "id": "01a19676-abad-7681-b55d-70ea621056d6",
+              "label": "City Glide",
+              "removed": false,
+              "isDefault": false
+            },
+            {
+              "id": "01a19676-abae-7331-9814-5acd268d1b2b",
+              "label": "Kids 16",
+              "removed": false,
+              "isDefault": false
+            }
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "standardFields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "description": "Text",
+          "rule": "Required"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "description": "Email, unique in the workspace",
+          "rule": "Email or phone required"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "description": "Phone number",
+          "rule": "Email or phone required"
+        },
+        {
+          "key": "otherEmails",
+          "label": "Other emails",
+          "description": "Up to 5 more emails",
+          "rule": null
+        },
+        {
+          "key": "jobTitle",
+          "label": "Job title",
+          "description": "Text",
+          "rule": null
+        },
+        {
+          "key": "companyId",
+          "label": "Company",
+          "description": "Company, matched by email domain when left empty",
+          "rule": null
+        },
+        {
+          "key": "note",
+          "label": "Note",
+          "description": "Paragraph, seen only by your team",
+          "rule": null
+        }
+      ],
+      "fields": [
+        {
+          "id": "01a19676-abcf-7248-a5eb-0bf76624bdfb",
+          "recordType": "contact",
+          "key": "loyalty_tier",
+          "label": "Loyalty tier",
+          "helpText": null,
+          "type": "dropdown",
+          "required": "never",
+          "archived": false,
+          "position": 0,
+          "checkboxDefault": null,
+          "choices": [
+            {
+              "id": "01a19676-abd2-70ae-8aa6-040175fc4e57",
+              "label": "Silver",
+              "removed": false,
+              "isDefault": false
+            },
+            {
+              "id": "01a19676-abd4-716d-b27b-213382b3330e",
+              "label": "Gold",
+              "removed": false,
+              "isDefault": false
+            },
+            {
+              "id": "01a19676-abd6-7442-b3c4-9c31d77e6b32",
+              "label": "Platinum",
+              "removed": false,
+              "isDefault": false
+            }
+          ]
+        }
+      ]
+    },
+    "company": {
+      "standardFields": [
+        {
+          "key": "name",
+          "label": "Name",
+          "description": "Text, unique in the workspace",
+          "rule": "Required"
+        },
+        {
+          "key": "domains",
+          "label": "Email domains",
+          "description": "Up to 20 domains; new contacts join by email",
+          "rule": null
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "description": "Phone number",
+          "rule": null
+        },
+        {
+          "key": "website",
+          "label": "Website",
+          "description": "Web address",
+          "rule": null
+        },
+        {
+          "key": "note",
+          "label": "Note",
+          "description": "Paragraph, seen only by your team",
+          "rule": null
+        }
+      ],
+      "fields": []
+    }
+  },
+  "contacts": [
+    {
+      "id": "01a19676-acf2-7212-94a5-3de75cae5758",
+      "name": "Aditya Verma",
+      "email": "aditya@greencommute.example",
+      "phone": null,
+      "jobTitle": "Fleet manager",
+      "company": {
+        "id": "01a19676-ac74-77ef-a77c-57353573bcd1",
+        "name": "GreenCommute"
+      },
+      "updatedAt": "2026-11-01T09:35:22.354Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.354Z"
+    },
+    {
+      "id": "01a19676-ad8f-74c2-979c-601b2458fa6a",
+      "name": "Ananya Gupta",
+      "email": "ananya.g@mail.example",
+      "phone": null,
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.511Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.511Z"
+    },
+    {
+      "id": "01a19676-ad13-72b6-81dd-e2a27800099b",
+      "name": "Deepak Joshi",
+      "email": "deepak@metro-rentals.example",
+      "phone": "+91 99400 33112",
+      "jobTitle": "Accounts",
+      "company": {
+        "id": "01a19676-ac95-737f-9787-9fcb5158f40f",
+        "name": "Metro Rentals"
+      },
+      "updatedAt": "2026-11-01T09:35:22.387Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.387Z"
+    },
+    {
+      "id": "01a19676-ad51-7738-9743-2a4a3b941f8f",
+      "name": "Fatima Shaikh",
+      "email": "fatima.s@mail.example",
+      "phone": null,
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.449Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.449Z"
+    },
+    {
+      "id": "01a19676-ae2d-760e-96dd-bca46c391b37",
+      "name": "Imran Khan",
+      "email": "imran.khan@mail.example",
+      "phone": "+91 97390 66541",
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.669Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.669Z"
+    },
+    {
+      "id": "01a19676-add0-77f2-ac2d-36f265833798",
+      "name": "Kavya Reddy",
+      "email": "kavya.reddy@mail.example",
+      "phone": null,
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.576Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.576Z"
+    },
+    {
+      "id": "01a19676-acc9-7564-a5e9-ea167211da22",
+      "name": "Lakshmi Menon",
+      "email": "lakshmi@pedalpartners.example",
+      "phone": "+91 98450 11223",
+      "jobTitle": "Procurement lead",
+      "company": {
+        "id": "01a19676-ac4e-703b-b720-4d0afe9066ca",
+        "name": "Pedal Partners"
+      },
+      "updatedAt": "2026-11-01T09:35:22.313Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.313Z"
+    },
+    {
+      "id": "01a19676-adae-753e-b39e-830ac6298a47",
+      "name": "Meera Krishnan",
+      "email": "meera.k@mail.example",
+      "phone": "+91 94440 55128",
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.542Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.542Z"
+    },
+    {
+      "id": "01a19677-3a2a-751a-9cb8-e997f2d236f8",
+      "name": "Pooja Sharma",
+      "email": "pooja.sharma@mail.example",
+      "phone": null,
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:58.509Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:58.509Z"
+    },
+    {
+      "id": "01a19676-adf0-71c7-82eb-5d050a9cea04",
+      "name": "Rahul Nair",
+      "email": "rahul.nair@mail.example",
+      "phone": null,
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.608Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.608Z"
+    },
+    {
+      "id": "01a19676-ad33-7703-b945-b97dd8a43f9f",
+      "name": "Rohan Das",
+      "email": "rohan.das@mail.example",
+      "phone": "+91 90031 22871",
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.419Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.419Z"
+    },
+    {
+      "id": "01a19676-ae0e-7706-81e5-3afcf7c2ed18",
+      "name": "Sneha Bhat",
+      "email": "sneha.bhat@mail.example",
+      "phone": null,
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.638Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.638Z"
+    },
+    {
+      "id": "01a19677-3901-77c3-a129-4ae5b58bc2f9",
+      "name": "Suresh Pillai",
+      "email": "suresh.pillai@mail.example",
+      "phone": null,
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:58.211Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:58.211Z"
+    },
+    {
+      "id": "01a19676-ad70-75dd-a667-da682bf1c36a",
+      "name": "Vikram Rao",
+      "email": "vikram.rao@mail.example",
+      "phone": "+91 98860 44120",
+      "jobTitle": null,
+      "company": null,
+      "updatedAt": "2026-11-01T09:35:22.480Z",
+      "otherEmails": [],
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.480Z"
+    }
+  ],
+  "companies": [
+    {
+      "id": "01a19676-ac74-77ef-a77c-57353573bcd1",
+      "name": "GreenCommute",
+      "domains": ["greencommute.example"],
+      "contactCount": 1,
+      "updatedAt": "2026-11-01T09:35:22.228Z",
+      "phone": "+91 22 6612 4400",
+      "website": "https://greencommute.example",
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.228Z"
+    },
+    {
+      "id": "01a19676-ac95-737f-9787-9fcb5158f40f",
+      "name": "Metro Rentals",
+      "domains": ["metro-rentals.example"],
+      "contactCount": 1,
+      "updatedAt": "2026-11-01T09:35:22.261Z",
+      "phone": "+91 44 2811 7700",
+      "website": "https://metro-rentals.example",
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.261Z"
+    },
+    {
+      "id": "01a19676-ac4e-703b-b720-4d0afe9066ca",
+      "name": "Pedal Partners",
+      "domains": ["pedalpartners.example"],
+      "contactCount": 1,
+      "updatedAt": "2026-11-01T09:35:22.190Z",
+      "phone": "+91 80 4123 9900",
+      "website": "https://pedalpartners.example",
+      "note": null,
+      "customFields": {},
+      "createdAt": "2026-11-01T09:35:22.190Z"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "01a19677-55d4-71dd-9cdd-24124c03924f",
+      "number": 15,
+      "subject": "Service schedule for Q1",
+      "status": "resolved",
+      "priority": "low",
+      "type": null,
+      "contact": {
+        "id": "01a19676-acc9-7564-a5e9-ea167211da22",
+        "name": "Lakshmi Menon",
+        "email": "lakshmi@pedalpartners.example"
+      },
+      "company": {
+        "id": "01a19676-ac4e-703b-b720-4d0afe9066ca",
+        "name": "Pedal Partners"
+      },
+      "team": {
+        "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+        "name": "Orders & Delivery"
+      },
+      "assignee": {
+        "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+        "name": "Arjun Mehta"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:36:05.589Z",
+      "updatedAt": "2026-11-01T09:36:06.076Z",
+      "deletedAt": null,
+      "due": null,
+      "mergedInto": null,
+      "description": "Could you share the service visit dates for January to March for our 60 bikes?",
+      "source": "email",
+      "customFields": {},
+      "createdBy": null,
+      "resolvedAt": "2026-11-01T09:36:06.056Z",
+      "closedAt": null,
+      "firstResponseAt": "2026-11-01T09:36:06.076Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aeda-75e5-95c4-3e9f14d356e6",
+          "name": "Business customers"
+        },
+        "reply": {
+          "dueAt": "2026-11-01T17:36:05.589Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:36:06.076Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-03T09:36:05.589Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:36:06.056Z"
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19677-3a35-75ae-934f-51266e0a34f6",
+      "number": 14,
+      "subject": "Gift card not applied at checkout",
+      "status": "open",
+      "priority": "high",
+      "type": "problem",
+      "contact": {
+        "id": "01a19677-3a2a-751a-9cb8-e997f2d236f8",
+        "name": "Pooja Sharma",
+        "email": "pooja.sharma@mail.example"
+      },
+      "company": null,
+      "team": null,
+      "assignee": null,
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:58.519Z",
+      "updatedAt": "2026-11-01T09:35:58.617Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-02T07:30:00.000Z",
+        "target": "reply"
+      },
+      "mergedInto": null,
+      "description": "My gift card code GIFT-7781 says \"already used\" but I have never used it.",
+      "source": "web_form",
+      "customFields": {},
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": null,
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T07:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        },
+        "resolve": {
+          "dueAt": "2026-11-03T03:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19677-390c-76bd-8d9c-0c7f7a634131",
+      "number": 13,
+      "subject": "Do you deliver to Coimbatore?",
+      "status": "closed",
+      "priority": "medium",
+      "type": "question",
+      "contact": {
+        "id": "01a19677-3901-77c3-a129-4ae5b58bc2f9",
+        "name": "Suresh Pillai",
+        "email": "suresh.pillai@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+        "name": "Orders & Delivery"
+      },
+      "assignee": {
+        "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+        "name": "Neha Iyer"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:58.222Z",
+      "updatedAt": "2026-11-01T09:35:58.465Z",
+      "deletedAt": null,
+      "due": null,
+      "mergedInto": null,
+      "description": "I want to order a Kids 16 for my son. Do you deliver to Coimbatore, and how long does it take?",
+      "source": "web_form",
+      "customFields": {},
+      "createdBy": null,
+      "resolvedAt": "2026-11-01T09:35:58.398Z",
+      "closedAt": "2026-11-01T09:35:58.465Z",
+      "firstResponseAt": "2026-11-01T09:35:58.418Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T11:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:58.418Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-05T03:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:58.398Z"
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19677-369b-76e5-87d8-1bac7f840c78",
+      "number": 12,
+      "subject": "Wrong frame size delivered, need a return",
+      "status": "waiting_on_customer",
+      "priority": "medium",
+      "type": null,
+      "contact": {
+        "id": "01a19676-ae2d-760e-96dd-bca46c391b37",
+        "name": "Imran Khan",
+        "email": "imran.khan@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aaa5-710f-b777-2e3c85454ae6",
+        "name": "Returns & Warranty"
+      },
+      "assignee": {
+        "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+        "name": "Kabir Singh"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:57.597Z",
+      "updatedAt": "2026-11-01T09:35:58.171Z",
+      "deletedAt": null,
+      "due": null,
+      "mergedInto": null,
+      "description": "I ordered a Roadster 2 in size M but received size L. I would like to return it for the correct size.",
+      "source": "email",
+      "customFields": {
+        "order_number": "OC-10571"
+      },
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": "2026-11-01T09:35:58.171Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T11:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:58.171Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-05T03:30:00.000Z",
+          "state": "paused",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19677-301a-71ca-a2e6-c59249c00be7",
+      "number": 11,
+      "subject": "Feature request: EMI option at checkout",
+      "status": "open",
+      "priority": "low",
+      "type": "feature_request",
+      "contact": {
+        "id": "01a19676-ae0e-7706-81e5-3afcf7c2ed18",
+        "name": "Sneha Bhat",
+        "email": "sneha.bhat@mail.example"
+      },
+      "company": null,
+      "team": null,
+      "assignee": null,
+      "tags": ["checkout", "payments"],
+      "createdAt": "2026-11-01T09:35:55.930Z",
+      "updatedAt": "2026-11-01T09:35:55.930Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-03T03:30:00.000Z",
+        "target": "reply"
+      },
+      "mergedInto": null,
+      "description": "Asked on chat whether we can offer 6-month EMI on bikes above Rs 30,000.",
+      "source": "agent",
+      "customFields": {},
+      "createdBy": {
+        "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+        "name": "Priya Nair"
+      },
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": null,
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-03T03:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        },
+        "resolve": {
+          "dueAt": "2026-11-07T03:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19677-2eab-74cd-aeb0-daa5b8046a2b",
+      "number": 10,
+      "subject": "Tracking link not working",
+      "status": "pending",
+      "priority": "medium",
+      "type": "problem",
+      "contact": {
+        "id": "01a19676-adf0-71c7-82eb-5d050a9cea04",
+        "name": "Rahul Nair",
+        "email": "rahul.nair@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+        "name": "Orders & Delivery"
+      },
+      "assignee": {
+        "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+        "name": "Arjun Mehta"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:55.564Z",
+      "updatedAt": "2026-11-01T09:35:55.878Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-05T03:30:00.000Z",
+        "target": "resolve"
+      },
+      "mergedInto": null,
+      "description": "The tracking link in my shipping email says \"shipment not found\". Order OC-10560.",
+      "source": "email",
+      "customFields": {
+        "order_number": "OC-10560"
+      },
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": "2026-11-01T09:35:55.878Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T11:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:55.878Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-05T03:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19677-0f67-7048-a7e1-ba75815cc834",
+      "number": 9,
+      "subject": "Corporate leasing for 40 e-bikes",
+      "status": "pending",
+      "priority": "medium",
+      "type": "feature_request",
+      "contact": {
+        "id": "01a19676-acf2-7212-94a5-3de75cae5758",
+        "name": "Aditya Verma",
+        "email": "aditya@greencommute.example"
+      },
+      "company": {
+        "id": "01a19676-ac74-77ef-a77c-57353573bcd1",
+        "name": "GreenCommute"
+      },
+      "team": null,
+      "assignee": {
+        "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+        "name": "Priya Nair"
+      },
+      "tags": ["sales"],
+      "createdAt": "2026-11-01T09:35:47.560Z",
+      "updatedAt": "2026-11-01T09:35:48.417Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-02T09:35:47.560Z",
+        "target": "resolve"
+      },
+      "mergedInto": null,
+      "description": "We are planning a cycle-to-work programme for 40 employees from January. Do you offer leasing with servicing included?",
+      "source": "email",
+      "customFields": {},
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": "2026-11-01T09:35:48.417Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aeda-75e5-95c4-3e9f14d356e6",
+          "name": "Business customers"
+        },
+        "reply": {
+          "dueAt": "2026-11-01T13:35:47.560Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:48.417Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-02T09:35:47.560Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19677-0971-7344-b760-7afc0ec29d96",
+      "number": 8,
+      "subject": "Warranty claim: cracked frame on City Glide",
+      "status": "open",
+      "priority": "urgent",
+      "type": "problem",
+      "contact": {
+        "id": "01a19676-adae-753e-b39e-830ac6298a47",
+        "name": "Meera Krishnan",
+        "email": "meera.k@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aaa5-710f-b777-2e3c85454ae6",
+        "name": "Returns & Warranty"
+      },
+      "assignee": {
+        "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+        "name": "Neha Iyer"
+      },
+      "tags": ["frame", "warranty"],
+      "createdAt": "2026-11-01T09:35:46.033Z",
+      "updatedAt": "2026-11-01T09:35:46.208Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-02T04:30:00.000Z",
+        "target": "reply"
+      },
+      "mergedInto": null,
+      "description": "Customer reports a hairline crack near the bottom bracket after 4 months. Photos received over WhatsApp.",
+      "source": "agent",
+      "customFields": {},
+      "createdBy": {
+        "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+        "name": "Priya Nair"
+      },
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": null,
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T04:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        },
+        "resolve": {
+          "dueAt": "2026-11-02T07:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19677-078b-7352-a6ec-5a8577f862ce",
+      "number": 7,
+      "subject": "Invoice for October fleet service",
+      "status": "open",
+      "priority": "medium",
+      "type": "question",
+      "contact": {
+        "id": "01a19676-ad13-72b6-81dd-e2a27800099b",
+        "name": "Deepak Joshi",
+        "email": "deepak@metro-rentals.example"
+      },
+      "company": {
+        "id": "01a19676-ac95-737f-9787-9fcb5158f40f",
+        "name": "Metro Rentals"
+      },
+      "team": null,
+      "assignee": {
+        "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+        "name": "Priya Nair"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:45.549Z",
+      "updatedAt": "2026-11-01T09:35:45.974Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-01T13:35:45.549Z",
+        "target": "reply"
+      },
+      "mergedInto": null,
+      "description": "Hello,\n\nPlease share the GST invoice for the October service visit for our 25 rental bikes. Our accounts team closes the month on Tuesday.\n\nDeepak",
+      "source": "email",
+      "customFields": {},
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": null,
+      "sla": {
+        "policy": {
+          "id": "01a19676-aeda-75e5-95c4-3e9f14d356e6",
+          "name": "Business customers"
+        },
+        "reply": {
+          "dueAt": "2026-11-01T13:35:45.549Z",
+          "state": "running",
+          "doneAt": null
+        },
+        "resolve": {
+          "dueAt": "2026-11-02T09:35:45.549Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19676-ec05-72df-a878-cdede2e766f8",
+      "number": 6,
+      "subject": "App shows the wrong delivery date",
+      "status": "open",
+      "priority": "medium",
+      "type": "incident",
+      "contact": {
+        "id": "01a19676-add0-77f2-ac2d-36f265833798",
+        "name": "Kavya Reddy",
+        "email": "kavya.reddy@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+        "name": "Orders & Delivery"
+      },
+      "assignee": null,
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:38.502Z",
+      "updatedAt": "2026-11-01T09:35:38.604Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-02T11:30:00.000Z",
+        "target": "reply"
+      },
+      "mergedInto": null,
+      "description": "The order page in your app says 2 November but the confirmation email said 30 October. Which one is right?",
+      "source": "web_form",
+      "customFields": {},
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": null,
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T11:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        },
+        "resolve": {
+          "dueAt": "2026-11-05T03:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19676-e855-728c-9a01-1a59819da6df",
+      "number": 5,
+      "subject": "Bike arrived damaged: bent derailleur hanger",
+      "status": "open",
+      "priority": "high",
+      "type": null,
+      "contact": {
+        "id": "01a19676-ad8f-74c2-979c-601b2458fa6a",
+        "name": "Ananya Gupta",
+        "email": "ananya.g@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aaa5-710f-b777-2e3c85454ae6",
+        "name": "Returns & Warranty"
+      },
+      "assignee": null,
+      "tags": ["damage"],
+      "createdAt": "2026-11-01T09:35:37.559Z",
+      "updatedAt": "2026-11-01T09:35:38.443Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-02T07:30:00.000Z",
+        "target": "reply"
+      },
+      "mergedInto": null,
+      "description": "The Trail X arrived today and the rear derailleur hanger is bent. The gears skip on every ride. Photos attached to my next mail.",
+      "source": "email",
+      "customFields": {
+        "order_number": "OC-10544"
+      },
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": null,
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T07:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        },
+        "resolve": {
+          "dueAt": "2026-11-03T03:30:00.000Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19676-e2e3-73d6-b4d9-e0e901c52062",
+      "number": 4,
+      "subject": "Upgrade to Trail X before delivery",
+      "status": "resolved",
+      "priority": "low",
+      "type": "question",
+      "contact": {
+        "id": "01a19676-ad70-75dd-a667-da682bf1c36a",
+        "name": "Vikram Rao",
+        "email": "vikram.rao@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+        "name": "Orders & Delivery"
+      },
+      "assignee": {
+        "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+        "name": "Arjun Mehta"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:36.164Z",
+      "updatedAt": "2026-11-01T09:35:36.289Z",
+      "deletedAt": null,
+      "due": null,
+      "mergedInto": null,
+      "description": "Customer called: wants to switch the Roadster 2 on order OC-10517 to a Trail X and pay the difference.",
+      "source": "agent",
+      "customFields": {
+        "order_number": "OC-10517"
+      },
+      "createdBy": {
+        "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+        "name": "Priya Nair"
+      },
+      "resolvedAt": "2026-11-01T09:35:36.269Z",
+      "closedAt": null,
+      "firstResponseAt": "2026-11-01T09:35:36.289Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-03T03:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:36.289Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-07T03:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:36.269Z"
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19676-c120-730b-a259-3004cfc81d74",
+      "number": 3,
+      "subject": "Refund for returned helmet not received",
+      "status": "resolved",
+      "priority": "medium",
+      "type": null,
+      "contact": {
+        "id": "01a19676-ad51-7738-9743-2a4a3b941f8f",
+        "name": "Fatima Shaikh",
+        "email": "fatima.s@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aaa5-710f-b777-2e3c85454ae6",
+        "name": "Returns & Warranty"
+      },
+      "assignee": {
+        "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+        "name": "Kabir Singh"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:27.523Z",
+      "updatedAt": "2026-11-01T09:35:36.083Z",
+      "deletedAt": null,
+      "due": null,
+      "mergedInto": null,
+      "description": "I returned the Aero helmet two weeks ago and still have not received my refund. The courier confirmed pickup on 14 October.",
+      "source": "email",
+      "customFields": {},
+      "createdBy": null,
+      "resolvedAt": "2026-11-01T09:35:36.083Z",
+      "closedAt": null,
+      "firstResponseAt": "2026-11-01T09:35:28.753Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T11:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:28.753Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-05T03:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:36.083Z"
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19676-bc5a-71aa-a1f4-4576e1ef8ba5",
+      "number": 2,
+      "subject": "Front brake squeaking after first ride",
+      "status": "waiting_on_customer",
+      "priority": "medium",
+      "type": "question",
+      "contact": {
+        "id": "01a19676-ad33-7703-b945-b97dd8a43f9f",
+        "name": "Rohan Das",
+        "email": "rohan.das@mail.example"
+      },
+      "company": null,
+      "team": {
+        "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+        "name": "Orders & Delivery"
+      },
+      "assignee": {
+        "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+        "name": "Neha Iyer"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:26.300Z",
+      "updatedAt": "2026-11-01T09:35:26.513Z",
+      "deletedAt": null,
+      "due": null,
+      "mergedInto": null,
+      "description": "My new City Glide makes a loud squeak when I brake. Is this normal for new brakes?",
+      "source": "web_form",
+      "customFields": {},
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": "2026-11-01T09:35:26.513Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+          "name": "Default policy"
+        },
+        "reply": {
+          "dueAt": "2026-11-02T11:30:00.000Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:26.513Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-05T03:30:00.000Z",
+          "state": "paused",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    },
+    {
+      "id": "01a19676-b932-7338-aee7-7fdf92daabb1",
+      "number": 1,
+      "subject": "Bulk order PP-2291: 3 bikes missing from delivery",
+      "status": "open",
+      "priority": "high",
+      "type": null,
+      "contact": {
+        "id": "01a19676-acc9-7564-a5e9-ea167211da22",
+        "name": "Lakshmi Menon",
+        "email": "lakshmi@pedalpartners.example"
+      },
+      "company": {
+        "id": "01a19676-ac4e-703b-b720-4d0afe9066ca",
+        "name": "Pedal Partners"
+      },
+      "team": {
+        "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+        "name": "Orders & Delivery"
+      },
+      "assignee": {
+        "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+        "name": "Arjun Mehta"
+      },
+      "tags": [],
+      "createdAt": "2026-11-01T09:35:25.495Z",
+      "updatedAt": "2026-11-01T09:35:27.570Z",
+      "deletedAt": null,
+      "due": {
+        "at": "2026-11-01T17:35:25.495Z",
+        "target": "resolve"
+      },
+      "mergedInto": null,
+      "description": "Hi team,\n\nWe received 9 of the 12 Roadster 2 bikes from order PP-2291 today. The delivery note lists all 12. Can you check with the courier?\n\nLakshmi",
+      "source": "email",
+      "customFields": {
+        "order_number": "PP-2291"
+      },
+      "createdBy": null,
+      "resolvedAt": null,
+      "closedAt": null,
+      "firstResponseAt": "2026-11-01T09:35:26.139Z",
+      "sla": {
+        "policy": {
+          "id": "01a19676-aeda-75e5-95c4-3e9f14d356e6",
+          "name": "Business customers"
+        },
+        "reply": {
+          "dueAt": "2026-11-01T11:35:25.495Z",
+          "state": "met",
+          "doneAt": "2026-11-01T09:35:26.139Z"
+        },
+        "resolve": {
+          "dueAt": "2026-11-01T17:35:25.495Z",
+          "state": "running",
+          "doneAt": null
+        }
+      },
+      "ccEmails": []
+    }
+  ],
+  "conversations": {
+    "1": {
+      "messages": [
+        {
+          "id": "01a19676-bba8-7484-8f3d-a9ec1eecf6a2",
+          "kind": "reply",
+          "body": "Hi Lakshmi,\n\nSorry about this. The courier split the order into two boxes and the second one is at their Bengaluru hub. I have asked them to deliver it tomorrow before noon.\n\nArjun",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta"
+          },
+          "to": ["lakshmi@pedalpartners.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:35:27.530Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:26.120Z"
+        },
+        {
+          "id": "01a19676-bc21-7696-971c-cf7d7e9d5888",
+          "kind": "note",
+          "body": "@Kabir Singh the courier says the second box has a torn corner. Can we pre-approve a replacement if a bike is damaged?",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta"
+          },
+          "to": [],
+          "cc": [],
+          "mentions": [
+            {
+              "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+              "name": "Kabir Singh"
+            }
+          ],
+          "emailStatus": null,
+          "emailSentAt": null,
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:26.241Z"
+        },
+        {
+          "id": "01a19676-c14b-7603-9b3b-de5321fe0b2c",
+          "kind": "customer",
+          "body": "Thanks Arjun. Please make sure they call our warehouse before arriving, the gate closes at 1 pm.",
+          "bodyHtml": null,
+          "author": {
+            "type": "contact",
+            "contactId": "01a19676-acc9-7564-a5e9-ea167211da22",
+            "name": "Lakshmi Menon"
+          },
+          "to": ["orbit+1-e6352568355f@mail.orbit-cycles.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": null,
+          "emailSentAt": null,
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:27.564Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "2": {
+      "messages": [
+        {
+          "id": "01a19676-bd0b-7391-a0b4-150ccb9f2685",
+          "kind": "reply",
+          "body": "Hi Rohan,\n\nNew disc brakes often squeak for the first 30 to 50 stops while the pads bed in. Could you try ten firm stops from about 20 km/h and tell us if it continues?\n\nNeha",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+            "name": "Neha Iyer"
+          },
+          "to": ["rohan.das@mail.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:35:27.528Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:26.475Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "3": {
+      "messages": [
+        {
+          "id": "01a19676-c5e4-7388-9754-da7fb015617c",
+          "kind": "reply",
+          "body": "Hi Fatima,\n\nThe helmet reached our warehouse on 18 October and your refund of Rs 3,499 was issued today. It usually takes 5 to 7 working days to show in your account.\n\nKabir",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+            "name": "Kabir Singh"
+          },
+          "to": ["fatima.s@mail.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:35:29.510Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:28.740Z"
+        },
+        {
+          "id": "01a19676-e051-7571-835b-c87a9d30093e",
+          "kind": "customer",
+          "body": "Got it, thank you for checking.",
+          "bodyHtml": null,
+          "author": {
+            "type": "contact",
+            "contactId": "01a19676-ad51-7738-9743-2a4a3b941f8f",
+            "name": "Fatima Shaikh"
+          },
+          "to": ["orbit+3-7a55dccbd81d@mail.orbit-cycles.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": null,
+          "emailSentAt": null,
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:35.505Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "4": {
+      "messages": [
+        {
+          "id": "01a19676-e33c-7290-87eb-71494fc0c342",
+          "kind": "reply",
+          "body": "Hi Vikram,\n\nDone: your order now has the Trail X. We have sent a payment link for the difference of Rs 8,000. Delivery stays on Friday.\n\nArjun",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta"
+          },
+          "to": ["vikram.rao@mail.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:35:37.588Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:36.252Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "5": {
+      "messages": [],
+      "descriptionFiles": []
+    },
+    "6": {
+      "messages": [],
+      "descriptionFiles": []
+    },
+    "7": {
+      "messages": [],
+      "descriptionFiles": []
+    },
+    "8": {
+      "messages": [
+        {
+          "id": "01a19677-09d4-779e-b172-c99a43205c4f",
+          "kind": "note",
+          "body": "@Priya Nair this is the second City Glide frame this month from the same batch. Should we raise it with the factory?",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+            "name": "Neha Iyer"
+          },
+          "to": [],
+          "cc": [],
+          "mentions": [
+            {
+              "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+              "name": "Priya Nair"
+            }
+          ],
+          "emailStatus": null,
+          "emailSentAt": null,
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:46.132Z"
+        },
+        {
+          "id": "01a19677-0a1c-72ce-9454-3e10ddcff38c",
+          "kind": "note",
+          "body": "Yes, please collect the batch numbers. I will raise it with the factory on Monday.",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "to": [],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": null,
+          "emailSentAt": null,
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:46.204Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "9": {
+      "messages": [
+        {
+          "id": "01a19677-12a3-76cf-9765-50b7b7889bd9",
+          "kind": "reply",
+          "body": "Hi Aditya,\n\nYes, we do. I will send a proposal for 40 City Glide e-bikes with quarterly servicing by Thursday. Could you confirm the office locations?\n\nPriya",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "to": ["aditya@greencommute.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:35:49.557Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:48.387Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "10": {
+      "messages": [
+        {
+          "id": "01a19677-2fc7-76eb-9c65-cd7e6d2b38f3",
+          "kind": "reply",
+          "body": "Hi Rahul,\n\nThe courier updates the link a few hours after pickup. It should work by this evening; I will check again tomorrow morning.\n\nArjun",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta"
+          },
+          "to": ["rahul.nair@mail.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:35:57.596Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:55.847Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "11": {
+      "messages": [],
+      "descriptionFiles": []
+    },
+    "12": {
+      "messages": [
+        {
+          "id": "01a19677-38ba-74f9-a588-c684a77b165b",
+          "kind": "reply",
+          "body": "Hi Imran,\n\nSorry for the mix-up. We have emailed you a prepaid return label and reserved a size M for you. Could you confirm a pickup date?\n\nKabir",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+            "name": "Kabir Singh"
+          },
+          "to": ["imran.khan@mail.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:35:59.622Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:58.138Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "13": {
+      "messages": [
+        {
+          "id": "01a19677-39b0-77f3-8b74-bf518ae42a4c",
+          "kind": "reply",
+          "body": "Hi Suresh,\n\nYes, we deliver to Coimbatore in 3 to 4 working days, fully assembled. Delivery is free above Rs 10,000.\n\nNeha",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+            "name": "Neha Iyer"
+          },
+          "to": ["suresh.pillai@mail.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:35:59.618Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:35:58.384Z"
+        }
+      ],
+      "descriptionFiles": []
+    },
+    "14": {
+      "messages": [],
+      "descriptionFiles": []
+    },
+    "15": {
+      "messages": [
+        {
+          "id": "01a19677-5798-735c-aaff-ebcc4b97165b",
+          "kind": "reply",
+          "body": "Hi Lakshmi,\n\nThe visits are on 12 January, 9 February and 9 March, from 10 am. The technician will bring spare tubes and brake pads.\n\nArjun",
+          "bodyHtml": null,
+          "author": {
+            "type": "member",
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta"
+          },
+          "to": ["lakshmi@pedalpartners.example"],
+          "cc": [],
+          "mentions": [],
+          "emailStatus": "sent",
+          "emailSentAt": "2026-11-01T09:36:07.633Z",
+          "emailError": null,
+          "attachments": [],
+          "fromTicketNumber": null,
+          "createdAt": "2026-11-01T09:36:06.040Z"
+        }
+      ],
+      "descriptionFiles": []
+    }
+  },
+  "activity": {
+    "1": {
+      "activity": [
+        {
+          "id": "01a19676-b93f-75b8-ba70-1093d58c5bf0",
+          "at": "2026-11-01T09:35:25.503Z",
+          "actor": {
+            "userId": null,
+            "name": "Lakshmi Menon"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19676-bb54-76ee-bbda-804f72dfe9e8",
+          "at": "2026-11-01T09:35:26.036Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "priority",
+              "from": "medium",
+              "to": "high"
+            },
+            {
+              "field": "team",
+              "from": null,
+              "to": "Orders & Delivery"
+            },
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Arjun Mehta"
+            },
+            {
+              "field": "customFields.order_number",
+              "label": "Order number",
+              "from": null,
+              "to": "PP-2291"
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "activity": [
+        {
+          "id": "01a19676-bc61-76b5-9242-cf5394386fd5",
+          "at": "2026-11-01T09:35:26.305Z",
+          "actor": {
+            "userId": null,
+            "name": "Rohan Das"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19676-bcce-70ef-ad4c-63ba0868aeb5",
+          "at": "2026-11-01T09:35:26.414Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "type",
+              "from": null,
+              "to": "question"
+            },
+            {
+              "field": "team",
+              "from": null,
+              "to": "Orders & Delivery"
+            },
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Neha Iyer"
+            }
+          ]
+        },
+        {
+          "id": "01a19676-bd24-73aa-bdfd-64b2baa7c85e",
+          "at": "2026-11-01T09:35:26.500Z",
+          "actor": {
+            "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+            "name": "Neha Iyer"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "open",
+              "to": "waiting_on_customer"
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "activity": [
+        {
+          "id": "01a19676-c129-7647-9838-f22cd17db14a",
+          "at": "2026-11-01T09:35:27.529Z",
+          "actor": {
+            "userId": null,
+            "name": "Fatima Shaikh"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19676-c14b-7482-9639-3d65d38e2f85",
+          "at": "2026-11-01T09:35:27.563Z",
+          "actor": {
+            "userId": null,
+            "name": "Rule: Route returns and refunds to Returns & Warranty"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "team",
+              "from": null,
+              "to": "Returns & Warranty"
+            }
+          ]
+        },
+        {
+          "id": "01a19676-c59c-70b7-980d-5a142dc35769",
+          "at": "2026-11-01T09:35:28.668Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Kabir Singh"
+            }
+          ]
+        },
+        {
+          "id": "01a19676-e297-70b3-8d42-e00d13709599",
+          "at": "2026-11-01T09:35:36.087Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "open",
+              "to": "resolved"
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "activity": [
+        {
+          "id": "01a19676-e2e8-7468-9bd2-3809a7b54b3e",
+          "at": "2026-11-01T09:35:36.168Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19676-e351-7280-8b41-86aeb5a60439",
+          "at": "2026-11-01T09:35:36.273Z",
+          "actor": {
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "open",
+              "to": "resolved"
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "activity": [
+        {
+          "id": "01a19676-e85d-7251-8112-c3818ce0fee8",
+          "at": "2026-11-01T09:35:37.565Z",
+          "actor": {
+            "userId": null,
+            "name": "Ananya Gupta"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19676-e88a-7528-9908-0cbcfb23fb96",
+          "at": "2026-11-01T09:35:37.610Z",
+          "actor": {
+            "userId": null,
+            "name": "Rule: Damaged on arrival: high priority"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "priority",
+              "from": "medium",
+              "to": "high"
+            },
+            {
+              "field": "tags",
+              "from": [],
+              "to": ["damage"]
+            }
+          ]
+        },
+        {
+          "id": "01a19676-ebce-76a5-bcce-d3f75fbaed0d",
+          "at": "2026-11-01T09:35:38.446Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "team",
+              "from": null,
+              "to": "Returns & Warranty"
+            },
+            {
+              "field": "customFields.order_number",
+              "label": "Order number",
+              "from": null,
+              "to": "OC-10544"
+            }
+          ]
+        }
+      ]
+    },
+    "6": {
+      "activity": [
+        {
+          "id": "01a19676-ec0a-777d-ac59-aa029c7a84b0",
+          "at": "2026-11-01T09:35:38.506Z",
+          "actor": {
+            "userId": null,
+            "name": "Kavya Reddy"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19676-ec6f-74ec-ad2e-df91dd17b08e",
+          "at": "2026-11-01T09:35:38.607Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "type",
+              "from": null,
+              "to": "incident"
+            },
+            {
+              "field": "team",
+              "from": null,
+              "to": "Orders & Delivery"
+            }
+          ]
+        }
+      ]
+    },
+    "7": {
+      "activity": [
+        {
+          "id": "01a19677-0791-751d-ada3-f41cc274f870",
+          "at": "2026-11-01T09:35:45.553Z",
+          "actor": {
+            "userId": null,
+            "name": "Deepak Joshi"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19677-093a-714d-b95d-0aacf3d7a0cc",
+          "at": "2026-11-01T09:35:45.979Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "type",
+              "from": null,
+              "to": "question"
+            },
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Priya Nair"
+            }
+          ]
+        }
+      ]
+    },
+    "8": {
+      "activity": [
+        {
+          "id": "01a19677-0977-7570-affb-385fdc9f14a7",
+          "at": "2026-11-01T09:35:46.039Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "created",
+          "changes": []
+        }
+      ]
+    },
+    "9": {
+      "activity": [
+        {
+          "id": "01a19677-0f70-7139-9471-e05b4a2037d2",
+          "at": "2026-11-01T09:35:47.568Z",
+          "actor": {
+            "userId": null,
+            "name": "Aditya Verma"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19677-126e-71cc-bfa0-461c7c38ce60",
+          "at": "2026-11-01T09:35:48.334Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "type",
+              "from": null,
+              "to": "feature_request"
+            },
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Priya Nair"
+            },
+            {
+              "field": "tags",
+              "from": [],
+              "to": ["sales"]
+            }
+          ]
+        },
+        {
+          "id": "01a19677-12b5-72e1-86b1-47ab4ac94e32",
+          "at": "2026-11-01T09:35:48.405Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "open",
+              "to": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    "10": {
+      "activity": [
+        {
+          "id": "01a19677-2eb0-71ef-9ce5-ace82cb89f75",
+          "at": "2026-11-01T09:35:55.568Z",
+          "actor": {
+            "userId": null,
+            "name": "Rahul Nair"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19677-2f88-731c-90de-4bdeb7d19357",
+          "at": "2026-11-01T09:35:55.784Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "type",
+              "from": null,
+              "to": "problem"
+            },
+            {
+              "field": "team",
+              "from": null,
+              "to": "Orders & Delivery"
+            },
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Arjun Mehta"
+            },
+            {
+              "field": "customFields.order_number",
+              "label": "Order number",
+              "from": null,
+              "to": "OC-10560"
+            }
+          ]
+        },
+        {
+          "id": "01a19677-2fdb-75dc-9404-0fedde896817",
+          "at": "2026-11-01T09:35:55.867Z",
+          "actor": {
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "open",
+              "to": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    "11": {
+      "activity": [
+        {
+          "id": "01a19677-301f-707c-8929-91f13840a672",
+          "at": "2026-11-01T09:35:55.935Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "created",
+          "changes": []
+        }
+      ]
+    },
+    "12": {
+      "activity": [
+        {
+          "id": "01a19677-36a3-744e-9c93-a4edcb332b5b",
+          "at": "2026-11-01T09:35:57.603Z",
+          "actor": {
+            "userId": null,
+            "name": "Imran Khan"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19677-36c5-72ca-802b-69d83d2ca73f",
+          "at": "2026-11-01T09:35:57.637Z",
+          "actor": {
+            "userId": null,
+            "name": "Rule: Route returns and refunds to Returns & Warranty"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "team",
+              "from": null,
+              "to": "Returns & Warranty"
+            }
+          ]
+        },
+        {
+          "id": "01a19677-387e-701b-b234-3d435f5a5ac5",
+          "at": "2026-11-01T09:35:58.078Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Kabir Singh"
+            },
+            {
+              "field": "customFields.order_number",
+              "label": "Order number",
+              "from": null,
+              "to": "OC-10571"
+            }
+          ]
+        },
+        {
+          "id": "01a19677-38ce-7435-9217-69b4c1dfc86b",
+          "at": "2026-11-01T09:35:58.158Z",
+          "actor": {
+            "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+            "name": "Kabir Singh"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "open",
+              "to": "waiting_on_customer"
+            }
+          ]
+        }
+      ]
+    },
+    "13": {
+      "activity": [
+        {
+          "id": "01a19677-3911-75d8-a358-e87e11e7ee71",
+          "at": "2026-11-01T09:35:58.225Z",
+          "actor": {
+            "userId": null,
+            "name": "Suresh Pillai"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19677-3973-766d-97d7-d9c215d63d1b",
+          "at": "2026-11-01T09:35:58.323Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "type",
+              "from": null,
+              "to": "question"
+            },
+            {
+              "field": "team",
+              "from": null,
+              "to": "Orders & Delivery"
+            },
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Neha Iyer"
+            }
+          ]
+        },
+        {
+          "id": "01a19677-39c3-7706-910e-3c1fdf7c1d0e",
+          "at": "2026-11-01T09:35:58.403Z",
+          "actor": {
+            "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+            "name": "Neha Iyer"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "open",
+              "to": "resolved"
+            }
+          ]
+        },
+        {
+          "id": "01a19677-3a05-7128-af05-9ccc54b362f2",
+          "at": "2026-11-01T09:35:58.469Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "resolved",
+              "to": "closed"
+            }
+          ]
+        }
+      ]
+    },
+    "14": {
+      "activity": [
+        {
+          "id": "01a19677-3a3a-766b-a6ee-c1efd0624bdd",
+          "at": "2026-11-01T09:35:58.522Z",
+          "actor": {
+            "userId": null,
+            "name": "Pooja Sharma"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19677-3a9c-7784-acce-eb70c24ba0c8",
+          "at": "2026-11-01T09:35:58.620Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "priority",
+              "from": "medium",
+              "to": "high"
+            },
+            {
+              "field": "type",
+              "from": null,
+              "to": "problem"
+            }
+          ]
+        }
+      ]
+    },
+    "15": {
+      "activity": [
+        {
+          "id": "01a19677-55d9-7007-b857-e3256f5cbf05",
+          "at": "2026-11-01T09:36:05.593Z",
+          "actor": {
+            "userId": null,
+            "name": "Lakshmi Menon"
+          },
+          "action": "created",
+          "changes": []
+        },
+        {
+          "id": "01a19677-574e-7308-b95a-a095bcc0833d",
+          "at": "2026-11-01T09:36:05.966Z",
+          "actor": {
+            "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+            "name": "Priya Nair"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "priority",
+              "from": "medium",
+              "to": "low"
+            },
+            {
+              "field": "team",
+              "from": null,
+              "to": "Orders & Delivery"
+            },
+            {
+              "field": "assignee",
+              "from": null,
+              "to": "Arjun Mehta"
+            }
+          ]
+        },
+        {
+          "id": "01a19677-57ab-76d8-833d-3e389f73bbaf",
+          "at": "2026-11-01T09:36:06.059Z",
+          "actor": {
+            "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+            "name": "Arjun Mehta"
+          },
+          "action": "updated",
+          "changes": [
+            {
+              "field": "status",
+              "from": "open",
+              "to": "resolved"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cannedResponses": {
+    "cannedResponses": [
+      {
+        "id": "01a19676-abf8-703f-96c6-6fd8fb94f015",
+        "title": "Order status update",
+        "body": "Hi {{contact.first_name}},\n\nThanks for your patience. Your order is with our courier and should reach you within 2 working days. We will share the tracking link as soon as it is updated.\n\n{{agent.first_name}}, {{workspace.name}}",
+        "shared": true,
+        "mine": false,
+        "authorName": "Priya Nair",
+        "canEdit": true,
+        "createdAt": "2026-11-01T09:35:22.104Z",
+        "updatedAt": "2026-11-01T09:35:22.104Z"
+      },
+      {
+        "id": "01a19676-ac12-763b-9502-f7517988550d",
+        "title": "Return label sent",
+        "body": "Hi {{contact.first_name}},\n\nWe have emailed you a prepaid return label for ticket #{{ticket.number}}. Pack the item in its original box and our courier will collect it within 3 working days.\n\n{{agent.first_name}}",
+        "shared": true,
+        "mine": false,
+        "authorName": "Priya Nair",
+        "canEdit": true,
+        "createdAt": "2026-11-01T09:35:22.130Z",
+        "updatedAt": "2026-11-01T09:35:22.130Z"
+      },
+      {
+        "id": "01a19676-ac2d-7797-ab9d-b862efed9a8d",
+        "title": "Warranty claim received",
+        "body": "Hi {{contact.first_name}},\n\nWe have registered your warranty claim. Please send two photos of the part and your order number, and our service team will confirm the replacement within 2 working days.\n\n{{agent.first_name}}",
+        "shared": true,
+        "mine": false,
+        "authorName": "Priya Nair",
+        "canEdit": true,
+        "createdAt": "2026-11-01T09:35:22.157Z",
+        "updatedAt": "2026-11-01T09:35:22.157Z"
+      }
+    ],
+    "placeholders": [
+      {
+        "key": "contact.name",
+        "label": "Requester's name"
+      },
+      {
+        "key": "contact.first_name",
+        "label": "Requester's first name"
+      },
+      {
+        "key": "contact.email",
+        "label": "Requester's email"
+      },
+      {
+        "key": "ticket.number",
+        "label": "Ticket number"
+      },
+      {
+        "key": "ticket.subject",
+        "label": "Ticket subject"
+      },
+      {
+        "key": "agent.name",
+        "label": "Your name"
+      },
+      {
+        "key": "agent.first_name",
+        "label": "Your first name"
+      },
+      {
+        "key": "workspace.name",
+        "label": "Workspace name"
+      }
+    ]
+  },
+  "rules": {
+    "rules": [
+      {
+        "id": "01a19676-ae58-7447-bd15-c3e40c518945",
+        "name": "Route returns and refunds to Returns & Warranty",
+        "event": "ticket_created",
+        "enabled": true,
+        "position": 1,
+        "conditions": {
+          "match": "any",
+          "items": [
+            {
+              "field": "subject_or_description",
+              "operator": "contains_any",
+              "value": ["return", "refund", "warranty"]
+            }
+          ]
+        },
+        "actions": [
+          {
+            "type": "set_team",
+            "value": "01a19676-aaa5-710f-b777-2e3c85454ae6"
+          }
+        ],
+        "stopAfter": false,
+        "createdAt": "2026-11-01T09:35:22.712Z",
+        "updatedAt": "2026-11-01T09:35:22.712Z"
+      },
+      {
+        "id": "01a19676-ae81-7120-81f6-35146493d97e",
+        "name": "Damaged on arrival: high priority",
+        "event": "ticket_created",
+        "enabled": true,
+        "position": 2,
+        "conditions": {
+          "match": "any",
+          "items": [
+            {
+              "field": "subject_or_description",
+              "operator": "contains_any",
+              "value": ["damaged", "broken"]
+            }
+          ]
+        },
+        "actions": [
+          {
+            "type": "set_priority",
+            "value": "high"
+          },
+          {
+            "type": "add_tags",
+            "value": ["damage"]
+          }
+        ],
+        "stopAfter": false,
+        "createdAt": "2026-11-01T09:35:22.753Z",
+        "updatedAt": "2026-11-01T09:35:22.753Z"
+      },
+      {
+        "id": "01a19676-aeab-74ad-a1c6-d858b4c3d293",
+        "name": "Close resolved tickets after 3 days",
+        "event": "time",
+        "enabled": true,
+        "position": 3,
+        "conditions": {
+          "match": "all",
+          "items": [
+            {
+              "field": "status",
+              "operator": "is_any",
+              "value": ["resolved"]
+            },
+            {
+              "field": "hours_in_status",
+              "operator": "at_least",
+              "value": "72"
+            }
+          ]
+        },
+        "actions": [
+          {
+            "type": "set_status",
+            "value": "closed"
+          }
+        ],
+        "stopAfter": false,
+        "createdAt": "2026-11-01T09:35:22.795Z",
+        "updatedAt": "2026-11-01T09:35:22.795Z"
+      }
+    ]
+  },
+  "slaPolicies": {
+    "policies": [
+      {
+        "id": "01a19676-aeda-75e5-95c4-3e9f14d356e6",
+        "name": "Business customers",
+        "isDefault": false,
+        "position": 1,
+        "conditions": {
+          "match": "any",
+          "items": [
+            {
+              "field": "company",
+              "operator": "is_any",
+              "value": [
+                "01a19676-ac4e-703b-b720-4d0afe9066ca",
+                "01a19676-ac74-77ef-a77c-57353573bcd1",
+                "01a19676-ac95-737f-9787-9fcb5158f40f"
+              ]
+            }
+          ]
+        },
+        "targets": {
+          "urgent": {
+            "reply": {
+              "amount": 1,
+              "unit": "hours"
+            },
+            "resolve": {
+              "amount": 4,
+              "unit": "hours"
+            },
+            "hours": "calendar"
+          },
+          "high": {
+            "reply": {
+              "amount": 2,
+              "unit": "hours"
+            },
+            "resolve": {
+              "amount": 8,
+              "unit": "hours"
+            },
+            "hours": "calendar"
+          },
+          "medium": {
+            "reply": {
+              "amount": 4,
+              "unit": "hours"
+            },
+            "resolve": {
+              "amount": 24,
+              "unit": "hours"
+            },
+            "hours": "calendar"
+          },
+          "low": {
+            "reply": {
+              "amount": 8,
+              "unit": "hours"
+            },
+            "resolve": {
+              "amount": 48,
+              "unit": "hours"
+            },
+            "hours": "calendar"
+          }
+        },
+        "escalation": {
+          "warnMinutes": 30,
+          "reassign": "team_lead",
+          "reassignUserId": null
+        },
+        "createdAt": "2026-11-01T09:35:22.842Z",
+        "updatedAt": "2026-11-01T09:35:22.842Z"
+      },
+      {
+        "id": "01a19676-aed4-7416-8d7a-ee3ea300aaf1",
+        "name": "Default policy",
+        "isDefault": true,
+        "position": 0,
+        "conditions": {
+          "match": "all",
+          "items": []
+        },
+        "targets": {
+          "urgent": {
+            "reply": {
+              "amount": 1,
+              "unit": "hours"
+            },
+            "resolve": {
+              "amount": 4,
+              "unit": "hours"
+            },
+            "hours": "business"
+          },
+          "high": {
+            "reply": {
+              "amount": 4,
+              "unit": "hours"
+            },
+            "resolve": {
+              "amount": 1,
+              "unit": "days"
+            },
+            "hours": "business"
+          },
+          "medium": {
+            "reply": {
+              "amount": 8,
+              "unit": "hours"
+            },
+            "resolve": {
+              "amount": 3,
+              "unit": "days"
+            },
+            "hours": "business"
+          },
+          "low": {
+            "reply": {
+              "amount": 1,
+              "unit": "days"
+            },
+            "resolve": {
+              "amount": 5,
+              "unit": "days"
+            },
+            "hours": "business"
+          }
+        },
+        "escalation": {
+          "warnMinutes": 10,
+          "reassign": "nobody",
+          "reassignUserId": null
+        },
+        "createdAt": "2026-11-01T09:35:22.821Z",
+        "updatedAt": "2026-11-01T09:35:22.821Z"
+      }
+    ]
+  },
+  "businessHours": {
+    "timeZone": "Asia/Kolkata",
+    "alwaysOpen": false,
+    "days": [
+      {
+        "day": "monday",
+        "open": true,
+        "start": "09:00",
+        "end": "18:00"
+      },
+      {
+        "day": "tuesday",
+        "open": true,
+        "start": "09:00",
+        "end": "18:00"
+      },
+      {
+        "day": "wednesday",
+        "open": true,
+        "start": "09:00",
+        "end": "18:00"
+      },
+      {
+        "day": "thursday",
+        "open": true,
+        "start": "09:00",
+        "end": "18:00"
+      },
+      {
+        "day": "friday",
+        "open": true,
+        "start": "09:00",
+        "end": "18:00"
+      },
+      {
+        "day": "saturday",
+        "open": true,
+        "start": "09:00",
+        "end": "18:00"
+      },
+      {
+        "day": "sunday",
+        "open": false,
+        "start": "09:00",
+        "end": "18:00"
+      }
+    ],
+    "holidays": [
+      {
+        "id": "01a19676-aafe-766f-a837-749e30f1b44d",
+        "date": "2026-11-08",
+        "name": "Diwali"
+      },
+      {
+        "id": "01a19676-ab26-7611-9854-a782726df7b5",
+        "date": "2026-12-25",
+        "name": "Christmas"
+      }
+    ],
+    "openNow": false,
+    "saved": true
+  },
+  "emailSettings": {
+    "senderName": "Orbit Cycles Support",
+    "workspaceName": "Orbit Cycles",
+    "address": "orbit@mail.orbit-cycles.example",
+    "from": "\"Orbit Cycles Support\" <orbit@mail.orbit-cycles.example>",
+    "customerNotifications": {
+      "received": true,
+      "resolved": true,
+      "agentCreated": false
+    }
+  },
+  "webFormSettings": {
+    "enabled": true,
+    "title": "Contact Orbit Cycles support",
+    "intro": "Tell us about your order or your bike. We reply within one working day.",
+    "url": "http://orbit.localhost:5173/support"
+  },
+  "security": {
+    "requireTwoFactor": false,
+    "members": 4,
+    "membersWithTwoFactor": 0
+  },
+  "audit": {
+    "entries": [
+      {
+        "id": "01a19676-aede-7649-a4c3-b757414a0574",
+        "occurredAt": "2026-11-01T09:35:22.846Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "sla_policy.created",
+        "summary": "Priya Nair added the SLA policy \"Business customers\".",
+        "target": {
+          "type": "sla_policy",
+          "id": "01a19676-aeda-75e5-95c4-3e9f14d356e6",
+          "label": "Business customers"
+        },
+        "details": {},
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-aeb0-70ed-a806-1cdefb05d03f",
+        "occurredAt": "2026-11-01T09:35:22.800Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "rule.created",
+        "summary": "Priya Nair added the rule \"Close resolved tickets after 3 days\".",
+        "target": {
+          "type": "rule",
+          "id": "01a19676-aeab-74ad-a1c6-d858b4c3d293",
+          "label": "Close resolved tickets after 3 days"
+        },
+        "details": {},
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-ae84-7453-b27f-d0689aa7cb58",
+        "occurredAt": "2026-11-01T09:35:22.756Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "rule.created",
+        "summary": "Priya Nair added the rule \"Damaged on arrival: high priority\".",
+        "target": {
+          "type": "rule",
+          "id": "01a19676-ae81-7120-81f6-35146493d97e",
+          "label": "Damaged on arrival: high priority"
+        },
+        "details": {},
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-ae5b-75b7-b5b5-5f4dbde76338",
+        "occurredAt": "2026-11-01T09:35:22.716Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "rule.created",
+        "summary": "Priya Nair added the rule \"Route returns and refunds to Returns & Warranty\".",
+        "target": {
+          "type": "rule",
+          "id": "01a19676-ae58-7447-bd15-c3e40c518945",
+          "label": "Route returns and refunds to Returns & Warranty"
+        },
+        "details": {},
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-abda-7569-a9d5-68cca179fdc7",
+        "occurredAt": "2026-11-01T09:35:22.074Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "custom_field.created",
+        "summary": "Priya Nair added the contact field \"Loyalty tier\".",
+        "target": {
+          "type": "custom_field",
+          "id": "01a19676-abcf-7248-a5eb-0bf76624bdfb",
+          "label": "Loyalty tier"
+        },
+        "details": {
+          "key": "loyalty_tier",
+          "type": "dropdown",
+          "recordType": "contact"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-abb1-71ac-a0d5-a877cf512efc",
+        "occurredAt": "2026-11-01T09:35:22.033Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "custom_field.created",
+        "summary": "Priya Nair added the ticket field \"Bike model\".",
+        "target": {
+          "type": "custom_field",
+          "id": "01a19676-aba6-731a-adfd-de793346ac83",
+          "label": "Bike model"
+        },
+        "details": {
+          "key": "bike_model",
+          "type": "dropdown",
+          "recordType": "ticket"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-ab88-7375-a75f-0ced1f17eb56",
+        "occurredAt": "2026-11-01T09:35:21.992Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "custom_field.created",
+        "summary": "Priya Nair added the ticket field \"Order number\".",
+        "target": {
+          "type": "custom_field",
+          "id": "01a19676-ab84-70a6-8504-028fd88e473f",
+          "label": "Order number"
+        },
+        "details": {
+          "key": "order_number",
+          "type": "text",
+          "recordType": "ticket"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-ab6a-75a7-9c5b-57a55fa267ca",
+        "occurredAt": "2026-11-01T09:35:21.963Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "workspace.web_form_changed",
+        "summary": "Priya Nair turned on the web form.",
+        "target": {
+          "type": "workspace",
+          "id": "01a19676-9bd0-75d4-86c8-e20cd482fef5",
+          "label": "Orbit Cycles"
+        },
+        "details": {
+          "changed": ["enabled", "title", "intro"],
+          "enabled": true
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-ab4f-76bb-89fa-5438a69b8131",
+        "occurredAt": "2026-11-01T09:35:21.935Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "workspace.email_sender_changed",
+        "summary": "Priya Nair changed the email sender name to \"Orbit Cycles Support\".",
+        "target": {
+          "type": "workspace",
+          "id": "01a19676-9bd0-75d4-86c8-e20cd482fef5",
+          "label": "Orbit Cycles"
+        },
+        "details": {
+          "to": "Orbit Cycles Support",
+          "from": null
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-ab2a-724a-be68-7cb35529b8b7",
+        "occurredAt": "2026-11-01T09:35:21.898Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "holiday.added",
+        "summary": "Priya Nair added the holiday \"Christmas\" on 2026-12-25.",
+        "target": {
+          "type": "workspace",
+          "id": "01a19676-ab26-7611-9854-a782726df7b5",
+          "label": "Christmas"
+        },
+        "details": {
+          "date": "2026-12-25"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-ab02-72e2-842d-3865e9a9ad99",
+        "occurredAt": "2026-11-01T09:35:21.858Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "holiday.added",
+        "summary": "Priya Nair added the holiday \"Diwali\" on 2026-11-08.",
+        "target": {
+          "type": "workspace",
+          "id": "01a19676-aafe-766f-a837-749e30f1b44d",
+          "label": "Diwali"
+        },
+        "details": {
+          "date": "2026-11-08"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-aad8-73bb-ab10-4f678787f987",
+        "occurredAt": "2026-11-01T09:35:21.817Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "workspace.business_hours_changed",
+        "summary": "Priya Nair changed the business hours to Mon–Sat 09:00–18:00.",
+        "target": {
+          "type": "workspace",
+          "id": "01a19676-9bd0-75d4-86c8-e20cd482fef5",
+          "label": "Orbit Cycles"
+        },
+        "details": {
+          "to": "Mon–Sat 09:00–18:00",
+          "from": "Mon–Fri 09:00–18:00"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-aaae-7246-b567-87958ab50842",
+        "occurredAt": "2026-11-01T09:35:21.774Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "team.created",
+        "summary": "Priya Nair created the team \"Returns & Warranty\" with Kabir Singh and Neha Iyer.",
+        "target": {
+          "type": "team",
+          "id": "01a19676-aaa5-710f-b777-2e3c85454ae6",
+          "label": "Returns & Warranty"
+        },
+        "details": {
+          "leads": ["Kabir Singh"],
+          "members": ["Kabir Singh", "Neha Iyer"]
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-aa80-73f0-9577-0db5ad53e91f",
+        "occurredAt": "2026-11-01T09:35:21.728Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "team.created",
+        "summary": "Priya Nair created the team \"Orders & Delivery\" with Arjun Mehta and Neha Iyer.",
+        "target": {
+          "type": "team",
+          "id": "01a19676-aa77-7354-a590-a33bd5f8bf1f",
+          "label": "Orders & Delivery"
+        },
+        "details": {
+          "leads": ["Arjun Mehta"],
+          "members": ["Arjun Mehta", "Neha Iyer"]
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-a9cd-76fd-a0b9-d67a76322b23",
+        "occurredAt": "2026-11-01T09:35:21.550Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+          "name": "Kabir Singh",
+          "email": "kabir@orbit-cycles.example",
+          "role": "supervisor"
+        },
+        "category": "sign_in",
+        "action": "sign_in.succeeded",
+        "summary": "Kabir Singh signed in after accepting an invitation.",
+        "target": null,
+        "details": {
+          "method": "invitation"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-a9be-770c-b855-fbf42d18eda7",
+        "occurredAt": "2026-11-01T09:35:21.534Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-a99f-7520-b036-fbf23f8b9b24",
+          "name": "Kabir Singh",
+          "email": "kabir@orbit-cycles.example",
+          "role": "supervisor"
+        },
+        "category": "members",
+        "action": "member.joined",
+        "summary": "Kabir Singh joined as Supervisor.",
+        "target": null,
+        "details": {
+          "role": "supervisor",
+          "email": "kabir@orbit-cycles.example"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-a6f7-7305-bd34-0de1efb381c2",
+        "occurredAt": "2026-11-01T09:35:20.823Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "members",
+        "action": "member.invited",
+        "summary": "Priya Nair invited kabir@orbit-cycles.example as Supervisor.",
+        "target": {
+          "type": "invitation",
+          "id": "01a19676-a6f3-749e-ac1c-0a720f509d0e",
+          "label": "kabir@orbit-cycles.example"
+        },
+        "details": {
+          "role": "supervisor",
+          "email": "kabir@orbit-cycles.example"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-a5e8-762a-ad9d-5d1c1e49ff67",
+        "occurredAt": "2026-11-01T09:35:20.552Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+          "name": "Neha Iyer",
+          "email": "neha@orbit-cycles.example",
+          "role": "agent"
+        },
+        "category": "sign_in",
+        "action": "sign_in.succeeded",
+        "summary": "Neha Iyer signed in after accepting an invitation.",
+        "target": null,
+        "details": {
+          "method": "invitation"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-a5db-7576-be33-1c18e15a5a55",
+        "occurredAt": "2026-11-01T09:35:20.539Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-a5b9-7270-98b4-59c0c53c6c0d",
+          "name": "Neha Iyer",
+          "email": "neha@orbit-cycles.example",
+          "role": "agent"
+        },
+        "category": "members",
+        "action": "member.joined",
+        "summary": "Neha Iyer joined as Agent.",
+        "target": null,
+        "details": {
+          "role": "agent",
+          "email": "neha@orbit-cycles.example"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-a2ef-75e4-abc8-863297e4f980",
+        "occurredAt": "2026-11-01T09:35:19.792Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "members",
+        "action": "member.invited",
+        "summary": "Priya Nair invited neha@orbit-cycles.example as Agent.",
+        "target": {
+          "type": "invitation",
+          "id": "01a19676-a2eb-7059-9ff0-5b4ff050abef",
+          "label": "neha@orbit-cycles.example"
+        },
+        "details": {
+          "role": "agent",
+          "email": "neha@orbit-cycles.example"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-a214-7658-8a87-38693fd71ca6",
+        "occurredAt": "2026-11-01T09:35:19.572Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+          "name": "Arjun Mehta",
+          "email": "arjun@orbit-cycles.example",
+          "role": "agent"
+        },
+        "category": "sign_in",
+        "action": "sign_in.succeeded",
+        "summary": "Arjun Mehta signed in after accepting an invitation.",
+        "target": null,
+        "details": {
+          "method": "invitation"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-a205-7457-aba7-6c84b93b8941",
+        "occurredAt": "2026-11-01T09:35:19.557Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-a1e2-705f-9285-740f71a210df",
+          "name": "Arjun Mehta",
+          "email": "arjun@orbit-cycles.example",
+          "role": "agent"
+        },
+        "category": "members",
+        "action": "member.joined",
+        "summary": "Arjun Mehta joined as Agent.",
+        "target": null,
+        "details": {
+          "role": "agent",
+          "email": "arjun@orbit-cycles.example"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-9edf-7136-b463-fd15770b080a",
+        "occurredAt": "2026-11-01T09:35:18.752Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "members",
+        "action": "member.invited",
+        "summary": "Priya Nair invited arjun@orbit-cycles.example as Agent.",
+        "target": {
+          "type": "invitation",
+          "id": "01a19676-9edb-771b-be5a-01348112eb45",
+          "label": "arjun@orbit-cycles.example"
+        },
+        "details": {
+          "role": "agent",
+          "email": "arjun@orbit-cycles.example"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-9dcf-74c0-8de3-497548c348f2",
+        "occurredAt": "2026-11-01T09:35:18.479Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "sign_in",
+        "action": "sign_in.succeeded",
+        "summary": "Priya Nair signed in by confirming their email.",
+        "target": null,
+        "details": {
+          "method": "email_confirmation"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      },
+      {
+        "id": "01a19676-9dc6-76cc-9138-0784254df574",
+        "occurredAt": "2026-11-01T09:35:18.471Z",
+        "actor": {
+          "type": "member",
+          "userId": "01a19676-9bbd-7708-a429-6ad86ce6d23f",
+          "name": "Priya Nair",
+          "email": "priya@orbit-cycles.example",
+          "role": "admin"
+        },
+        "category": "settings",
+        "action": "workspace.created",
+        "summary": "Priya Nair created the workspace.",
+        "target": {
+          "type": "workspace",
+          "id": "01a19676-9bd0-75d4-86c8-e20cd482fef5",
+          "label": "Orbit Cycles"
+        },
+        "details": {
+          "address": "orbit"
+        },
+        "ip": "127.0.0.1",
+        "device": "Chrome on Windows"
+      }
+    ],
+    "nextCursor": null
+  },
+  "notifications": {
+    "notifications": [
+      {
+        "id": "01a19677-09dc-74aa-bc9c-a77f1377caa7",
+        "kind": "mention",
+        "title": "Neha Iyer mentioned you on ticket #8",
+        "body": "@Priya Nair this is the second City Glide frame this month from the same batch. Should we raise it with the factory?",
+        "ticket": {
+          "number": 8,
+          "subject": "Warranty claim: cracked frame on City Glide"
+        },
+        "read": false,
+        "createdAt": "2026-11-01T09:35:46.140Z"
+      }
+    ],
+    "unread": 1,
+    "nextCursor": null
+  },
+  "emailChoices": {
+    "assigned": true,
+    "mention": true,
+    "sla_warning": true,
+    "sla_breach": true,
+    "customer_reply": false
+  },
+  "home": {
+    "counts": {
+      "mine": 2,
+      "overdue": 0,
+      "unassigned": 4,
+      "waitingOnCustomer": 0
+    },
+    "setup": {
+      "teamInvited": true,
+      "emailConnected": true,
+      "businessHoursSet": true
+    }
+  }
+}

@@ -12,6 +12,11 @@ export interface AppConfig {
   designPreview: boolean;
   /** The brand theme for this deployment. */
   brand: BrandId;
+  /**
+   * The demo build (VITE_DEMO=true): no API or server; the app answers its own API calls from
+   * sample data in the browser (src/demo) and opens straight into the sample workspace.
+   */
+  demo: boolean;
 }
 
 // Plain checks rather than Zod: this runs before every page, and Zod would add about 60 KB to the
@@ -58,16 +63,19 @@ function readBrand(value: unknown, problems: string[]): BrandId {
  * Reads the build-time settings (VITE_*) once. A missing or invalid value stops the app with a
  * clear message instead of failing later on the first API call.
  */
-export function loadConfig(env: Record<string, unknown>): AppConfig {
+export function loadConfig(env: Record<string, unknown>, hostname = 'localhost'): AppConfig {
   const problems: string[] = [];
+  const demo = readFlag('VITE_DEMO', env.VITE_DEMO, problems);
   const config = {
     apiUrl: readApiUrl(env.VITE_API_URL, problems),
-    appDomain: readDomain(env.VITE_APP_DOMAIN, problems),
+    // The demo runs on whatever address hosts it, so that address is its main one.
+    appDomain: demo ? hostname : readDomain(env.VITE_APP_DOMAIN, problems),
     designPreview: readFlag('VITE_DESIGN_PREVIEW', env.VITE_DESIGN_PREVIEW, problems),
     brand: readBrand(env.VITE_BRAND, problems),
+    demo,
   };
   if (problems.length > 0) throw new Error(`Invalid build settings:\n${problems.join('\n')}`);
   return config;
 }
 
-export const config = loadConfig(import.meta.env);
+export const config = loadConfig(import.meta.env, window.location.hostname);

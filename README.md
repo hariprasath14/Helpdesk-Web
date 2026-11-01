@@ -1,8 +1,81 @@
 # helpdesk-web
 
-Frontend for Helpdesk, a multi-tenant SaaS help desk. "Helpdesk" is a placeholder name, set in `src/product.ts` (rename steps: helpdesk-api `docs/BRANDING.md`). React + Vite + TypeScript.
+Frontend for Helpnest, a multi-tenant SaaS help desk. The product name is set in `src/product.ts` (rename steps: helpdesk-api `docs/BRANDING.md`). React + Vite + TypeScript.
 
-> Status: Step 0 in progress. S5 (frontend base) and S6 (design system and app shell) are built. Features come next, starting with sign-up and login (F1, F2). This README is updated with every frontend change.
+## About the project
+
+Helpnest is a multi-tenant help desk: support teams turn customer emails and web-form requests into tickets, work them together in real time, and automate routing and deadlines. I built it end to end as a portfolio project: product, frontend, backend, database, tests and infrastructure.
+
+**Live demo:** DEMO_LINK, no sign-up needed. It runs in your browser with sample data from a fictional bicycle shop's support team; try replying, assigning, filtering and changing settings (changes reset when you reload). A guided walkthrough is in [docs/demo-video-script.md](docs/demo-video-script.md).
+
+| Frontend                                                                    | Backend                                                                     |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [hariprasath14/Helpdesk-Web](https://github.com/hariprasath14/Helpdesk-Web) | [hariprasath14/Helpdesk-API](https://github.com/hariprasath14/Helpdesk-API) |
+
+![Ticket list with SLA countdowns, priorities and assignees](docs/screenshots/tickets.png)
+![A ticket: the conversation, history and properties](docs/screenshots/ticket.png)
+
+<details>
+<summary>More screenshots: home, rules, SLAs, contacts, phone, web form</summary>
+
+![Home page with counts and notifications](docs/screenshots/home.png)
+
+![Automation rules](docs/screenshots/rules.png)
+
+![SLA policies](docs/screenshots/slas.png)
+
+![Contacts](docs/screenshots/contacts.png)
+
+![Public web form](docs/screenshots/web-form.png)
+
+<img src="docs/screenshots/phone-tickets.png" alt="Ticket list on a phone" width="260">
+
+<img src="docs/screenshots/phone-ticket.png" alt="A ticket on a phone" width="260">
+
+</details>
+
+### What it does
+
+- **Tickets from everywhere:** customer emails become tickets (replies thread onto the same ticket), plus a public web form and tickets agents log themselves.
+- **Teamwork:** assignment, private notes with @mentions, saved views, canned responses with placeholders, merge and split, a notification center.
+- **Real time:** lists, tickets and notifications update live; agents see who else is on a ticket before replying.
+- **Automation:** a rules engine for new tickets, updates, customer replies and schedules (routing, round-robin, tags, emails), SLA policies with business hours and holidays, warnings and escalation.
+- **Workspaces:** each company gets its own address (`acme.<domain>`), roles and permissions, teams, custom fields, two-step sign-in and an audit log.
+
+### Architecture
+
+```mermaid
+flowchart LR
+  subgraph Browser
+    Web["React app<br/>TanStack Query, typed client"]
+  end
+  subgraph Server["One Docker image"]
+    API["Fastify API<br/>REST + Socket.IO"]
+    Worker["pg-boss worker<br/>email, rules, SLA timers"]
+  end
+  DB[("PostgreSQL 16<br/>row-level security")]
+  Mail["Email<br/>SMTP / Amazon SES"]
+  Web -- "REST, cookie session" --> API
+  API -. "live signals" .-> Web
+  API --> DB
+  Worker --> DB
+  DB -. "LISTEN / NOTIFY" .-> API
+  Worker <--> Mail
+```
+
+### Engineering highlights
+
+- **Tenant isolation in the database:** every query runs with the workspace set on the connection, and PostgreSQL row-level security filters every workspace table by it, so a forgotten filter in code still cannot leak another company's data. Separate writer, reader and migration roles with least privilege.
+- **API-first and type-safe end to end:** Zod schemas on each route generate the OpenAPI contract, which generates the frontend's typed client and form validation; a contract change that breaks the frontend fails its type check.
+- **Reliable background work:** email in and out, rules, SLA clocks and notifications run as background jobs with retries on PostgreSQL (pg-boss), with no extra infrastructure.
+- **Security:** Argon2 password hashing, breached-password check, TOTP two-step sign-in with recovery codes, CSRF protection, rate limits, sanitized email HTML, an audit log of sensitive actions.
+- **Tested like a product:** about 880 unit and integration tests with coverage minimums (statements above 90%), and 24 Playwright end-to-end suites against the real API, worker and mail server, with accessibility checks (axe, WCAG 2.1 AA) at desktop and phone widths.
+- **One codebase, any environment:** settings come from validated environment variables; email, storage and payments go through adapters chosen by settings; AWS infrastructure (ECS Fargate, CDK) is written as code.
+- **The demo is the real frontend:** a seed script builds the sample workspace through the real API and saves what every screen reads; in the demo build, a service worker answers the app's API calls from that data, and a test checks it against the API contract.
+
+**Stack:** TypeScript · React 19 · Vite · TanStack Query · Tailwind CSS · Fastify · Socket.IO · PostgreSQL · Sequelize · pg-boss · Zod + OpenAPI · Vitest · Playwright · Docker · AWS CDK
+
+## Developer guide
 
 The backend lives in the separate `helpdesk-api` repository. The overall architecture is in `helpdesk-api/docs/ARCHITECTURE.md`; coding rules in `helpdesk-api/docs/ENGINEERING_STANDARDS.md`.
 
@@ -44,6 +117,9 @@ Browsers resolve `*.localhost` to your own machine, so workspace addresses need 
 | `npm run format` / `format:check` | Prettier                                                                            |
 | `npm run audit`                   | Fail on high or critical vulnerabilities in production dependencies                 |
 | `npm run check`                   | Format, lint, types, tests with coverage minimums, audit (the pipeline runs this)   |
+| `npm run dev:demo`                | The demo (no API needed) on the dev server: see "Demo build"                        |
+| `npm run build:demo`              | Type check, then the demo build into `dist/`                                        |
+| `npm run demo:snapshot`           | Rebuild the demo's sample data from the real local API (API and worker running)     |
 
 First time running end-to-end tests: `npx playwright install chromium` downloads the test browser.
 
@@ -87,7 +163,10 @@ src/
 │                  debounced value, goTo (full-page navigation); Socket.IO client later
 ├── styles/        tokens.css (all colours), fonts.css, global.css (Tailwind setup)
 └── test/          test setup: mocked API (MSW), render helper
-e2e/               Playwright end-to-end tests and the accessibility check
+e2e/               Playwright end-to-end tests and the accessibility check; demo/ builds the demo's
+                   sample data (not part of the suite)
+docs/screenshots/  the README's screenshots, taken from the demo
+docs/demo-video-script.md  the demo's video script and interview walkthrough
 public/brands/     one folder per brand: favicon.svg (the mark), apple-touch-icon.png (180px)
 deploy/dev-lightsail/  TEMPORARY dev server (no budget yet): deploy.sh
 ```
@@ -423,9 +502,21 @@ Build-time values. Vite bakes them into the files, so they are **public**: never
 | `VITE_API_URL`        | Leave empty (local and AWS): the app calls `/api` on its own address. Set an origin only to call an API elsewhere |
 | `VITE_APP_DOMAIN`     | Main address; workspaces are its subdomains. `localhost` locally, the environment's domain on AWS (checked)       |
 | `VITE_DESIGN_PREVIEW` | `true` adds the design preview pages at `/design` (local and dev); `false` or unset in prod                       |
-| `VITE_BRAND`          | Brand theme for this deployment: `help-teal` (default) or `ocean-cyan`                                            |
+| `VITE_BRAND`          | Brand theme for this deployment: `forest` (default) or `indigo`                                                   |
+| `VITE_DEMO`           | `true` only in the demo build (`.env.demo`): no API; the app runs on sample data in the browser                   |
 
 Dev server only (not in the build): `API_PROXY_TARGET`, where the dev server forwards `/api`, `/health` and `/docs` (default `http://localhost:4000`).
+
+## Demo build
+
+A version of the app that needs no server, for showing the product: anyone can open it and use it with the sample data of a fictional bicycle shop's support team. It is the real app: the same screens, built with `VITE_DEMO=true` (`.env.demo`).
+
+- **How it works:** in the demo build, `main.tsx` first starts a service worker (MSW, the library the component tests already use) that answers the app's API calls from `src/demo`. The app opens straight into the sample workspace on whatever address hosts it, with a banner saying it is a demo. The live connection is off; screens refresh on their usual fallback timer.
+- **What works:** everything reads; tickets (edit, reply, note, create, trash), contacts, companies, saved views, canned responses and most settings change in memory until the page is reloaded. Invitations, passwords, two-step setup, file uploads, merging, and rule, SLA and field edits answer that the demo does not do them.
+- **The sample data is real API output:** `npm run demo:snapshot` (`e2e/demo/seed.demo.ts`, with helpdesk-api's API and worker running locally) builds the workspace through the real API, emails and web form, and saves what every screen reads into `src/demo/snapshot.json`. `data.ts` moves its dates so the tickets always look a few hours to a few days old. `src/demo/demo.test.ts` checks every answer against the API contract (the generated Zod schemas), so an API change that the demo no longer matches fails the tests: run the snapshot again.
+- **Try it locally:** `npm run dev:demo`, or `npm run build:demo` then `npx vite preview --mode demo`.
+- **Publish it:** any static host that serves `index.html` for unknown paths. On Cloudflare Pages (free): connect this repository, build command `npm run build:demo`, output folder `dist`, environment variable `NODE_VERSION=24`. Every push to `main` then republishes it.
+- **Show it:** [docs/demo-video-script.md](docs/demo-video-script.md) has a 2½-minute video script with exact clicks, and how to show the full app in an interview.
 
 ## Deployment
 

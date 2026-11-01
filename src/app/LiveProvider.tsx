@@ -1,6 +1,7 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { useEffect, useState, type ReactNode } from 'react';
 import { getGetApiV1MeQueryKey } from '../api/generated/accounts/accounts';
+import { config } from '../config';
 import { createLiveSocket } from '../lib/live';
 import { LiveContext } from './live-context';
 
@@ -17,6 +18,8 @@ export function LiveProvider({ children }: { children: ReactNode }) {
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
+    // The demo has no server to connect to; screens refresh on their fallback timer instead.
+    if (config.demo) return;
     const live = socket;
     let wasConnected = false;
     live.on('connect', () => {
