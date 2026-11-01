@@ -1,24 +1,17 @@
-import { useQueryClient } from '@tanstack/react-query';
 import { UserPlus } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
 import type { GetApiV1ContactsSort } from '../../api/generated/model';
 import { Button } from '../../components/Button';
 import { PageHeader } from '../../components/PageHeader';
 import { SelectField } from '../../components/SelectField';
-import { useToast } from '../../components/toast-context';
 import { useDebouncedValue } from '../../lib/use-debounced-value';
 import { CompanyPicker, type CompanyRef } from './CompanyPicker';
-import { ContactDrawer } from './ContactDrawer';
 import { countText, SORT_OPTIONS, useContactPages } from './contact-pages';
 import { ContactList, SearchBar } from './ContactList';
-import { refreshDirectory } from './directory';
+import { NewContactDrawer } from './NewRecordDrawers';
 
 /** Contacts: everyone your team supports. Every member can search, add and edit them. */
 export function ContactsPage() {
-  const queryClient = useQueryClient();
-  const toast = useToast();
-  const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState<GetApiV1ContactsSort>('name');
   const [company, setCompany] = useState<CompanyRef | null>(null);
@@ -95,15 +88,9 @@ export function ContactsPage() {
         />
       </section>
       {adding && (
-        <ContactDrawer
+        <NewContactDrawer
           onClose={() => {
             setAdding(false);
-          }}
-          onSaved={(contact, message) => {
-            setAdding(false);
-            void refreshDirectory(queryClient);
-            toast({ tone: 'success', message });
-            void navigate(`/contacts/${contact.id}`);
           }}
         />
       )}

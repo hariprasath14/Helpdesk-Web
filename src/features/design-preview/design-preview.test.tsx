@@ -4,7 +4,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { renderRoute } from '../../test/render';
 
 afterEach(() => {
-  document.documentElement.dataset.brand = 'help-teal';
+  document.documentElement.dataset.brand = 'forest';
 });
 
 describe('design preview', () => {
@@ -17,8 +17,8 @@ describe('design preview', () => {
     renderRoute('/design', { designPreview: true });
 
     expect(await screen.findByRole('heading', { name: 'Design preview' })).toBeInTheDocument();
-    await userEvent.click(screen.getByText('Ocean Cyan'));
-    expect(document.documentElement.dataset.brand).toBe('ocean-cyan');
+    await userEvent.click(screen.getByText('Indigo'));
+    expect(document.documentElement.dataset.brand).toBe('indigo');
 
     await userEvent.click(screen.getByRole('button', { name: 'Confirm dialog' }));
     expect(screen.getByRole('alertdialog', { name: 'Delete 3 tickets?' })).toBeInTheDocument();

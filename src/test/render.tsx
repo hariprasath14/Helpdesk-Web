@@ -26,7 +26,7 @@ export function renderRoute(
     initialEntries: [path],
   });
   const result = render(
-    <BrandProvider initial="help-teal">
+    <BrandProvider initial="forest">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <ToastProvider>

@@ -38,13 +38,20 @@ test.describe('app smoke test', () => {
     expect(errors).toEqual([]);
   });
 
-  test('loads the Satoshi font', async ({ page }) => {
+  test('loads the Nunito font', async ({ page }) => {
     await page.goto('/signup');
-    // This callback runs in the browser.
-    const loaded = await page.evaluate(async () => {
-      await document.fonts.ready;
-      return document.fonts.check('16px Satoshi');
-    });
-    expect(loaded).toBe(true);
+    // A font loads only once text uses it, so wait for the page to draw before checking.
+    await expect(
+      page.getByRole('heading', { name: `Create your ${PRODUCT_NAME} workspace` }),
+    ).toBeVisible();
+    await expect
+      .poll(() =>
+        // This callback runs in the browser.
+        page.evaluate(async () => {
+          await document.fonts.ready;
+          return document.fonts.check('16px "Nunito Variable"');
+        }),
+      )
+      .toBe(true);
   });
 });

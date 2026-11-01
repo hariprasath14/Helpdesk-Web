@@ -13,6 +13,6 @@ export type UpdateProfileRequestInputTheme = typeof UpdateProfileRequestInputThe
 
 
 export const UpdateProfileRequestInputTheme = {
-  'help-teal': 'help-teal',
-  'ocean-cyan': 'ocean-cyan',
+  forest: 'forest',
+  indigo: 'indigo',
 } as const;

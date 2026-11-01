@@ -10,8 +10,8 @@ test.describe('design system', () => {
     await expect(page.getByRole('heading', { name: 'Design preview' })).toBeVisible();
     await expectAccessible(page);
 
-    await page.getByText('Ocean Cyan').click();
-    await expect(page.locator('html')).toHaveAttribute('data-brand', 'ocean-cyan');
+    await page.getByText('Indigo').click();
+    await expect(page.locator('html')).toHaveAttribute('data-brand', 'indigo');
     await page.waitForTimeout(300); // let colour transitions finish before measuring contrast
     await expectAccessible(page);
   });

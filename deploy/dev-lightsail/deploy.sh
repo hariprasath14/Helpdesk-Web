@@ -26,7 +26,7 @@ fi
 VERSION=$(git rev-parse --short=12 HEAD)
 
 echo "== Building helpdesk-web $VERSION for $DOMAIN"
-VITE_API_URL= VITE_APP_DOMAIN="$DOMAIN" VITE_DESIGN_PREVIEW=true VITE_BRAND=help-teal npm run build
+VITE_API_URL= VITE_APP_DOMAIN="$DOMAIN" VITE_DESIGN_PREVIEW=true VITE_BRAND=forest npm run build
 
 if [ -n "${REHEARSAL_DIR:-}" ]; then
   # A plain copy: symbolic links don't survive Windows folders shared with Docker.

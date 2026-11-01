@@ -1,12 +1,12 @@
 /*
- * Helpdesk design tokens: the single source for colour. They mirror the Figma variable
- * collections "Helpdesk Brand" and "Helpdesk Core" (file SKCwp41FF3pelNAUsWCr6V).
+ * Design tokens: the single source for colour. They mirror the Figma variable collections
+ * "Brand" and "Core".
  *
  * Rules:
  * - Components use semantic tokens (Tailwind classes such as bg-brand-button, text-ink), never a
  *   raw hex value and never a brand shade directly.
- * - The brand colour is switched with one attribute on <html>: data-brand="help-teal" or
- *   "ocean-cyan". Status, SLA, priority and feedback colours never change with the brand.
+ * - The brand colour is switched with one attribute on <html>: data-brand="forest" or
+ *   "indigo". Status, SLA, priority and feedback colours never change with the brand.
  * - Every text/background pair used together passes WCAG AA (4.5:1). Contrast is noted next to
  *   the pairs that are close.
  */
@@ -14,54 +14,53 @@
 /* ---------- Brand palettes (one block per option) ---------- */
 
 :root,
-[data-brand='help-teal'] {
-  --brand-50: #ecf7f6;
-  --brand-100: #d8f0ed;
-  --brand-200: #added9;
-  --brand-500: #0e9f8e;
-  /* Figma has #0C8779 (4.41:1 with white, just under AA); 1.5% darker passes at 4.53:1. */
-  --brand-600: #0c8577;
-  --brand-700: #0a6f63;
-  --brand-900: #053c36;
+[data-brand='forest'] {
+  --brand-50: #eff8f1;
+  --brand-100: #d8eedd;
+  --brand-200: #b2ddbe;
+  --brand-500: #34894f;
+  --brand-600: #2b7343;
+  --brand-700: #235c37;
+  --brand-900: #12301d;
 }
 
-[data-brand='ocean-cyan'] {
-  --brand-50: #ebf6f9;
-  --brand-100: #d7edf3;
-  --brand-200: #abdae5;
-  --brand-500: #0891b2;
-  --brand-600: #077b97;
-  --brand-700: #06667d;
-  --brand-900: #033744;
+[data-brand='indigo'] {
+  --brand-50: #eef0ff;
+  --brand-100: #e0e3ff;
+  --brand-200: #c4c9ff;
+  --brand-500: #6461ec;
+  --brand-600: #4f46e5;
+  --brand-700: #4338ca;
+  --brand-900: #1e1b4b;
 }
 
 :root {
   /* ---------- Brand roles (what components use) ---------- */
-  --brand-button-bg: var(--brand-600); /* white text: 4.53:1 teal, 4.90:1 cyan */
+  --brand-button-bg: var(--brand-600); /* white text: 5.78:1 forest, 6.29:1 indigo */
   --brand-button-bg-hover: var(--brand-700);
-  --brand-link: var(--brand-700); /* 6.06:1 on white; 600 is too light for small text */
+  --brand-link: var(--brand-700); /* 7.90:1 on white, 7.31:1 on the page background */
   --brand-tint-bg: var(--brand-50);
   --brand-tint-bg-hover: var(--brand-100);
-  --brand-tint-text: var(--brand-700); /* 5.54:1 on brand-50 */
+  --brand-tint-text: var(--brand-700); /* 7.29:1 forest, 6.98:1 indigo on brand-50 */
   --brand-selected-row: var(--brand-50);
   --brand-avatar-bg: var(--brand-100);
   --brand-avatar-text: var(--brand-700);
   --brand-focus: var(--brand-500);
-  --brand-toast-action: var(--brand-200); /* 11:1 on the dark toast */
+  --brand-toast-action: var(--brand-200); /* 10.2:1 or more on the dark toast */
 
   /* ---------- App shell (follows the brand) ---------- */
   /* Decided 2026-10-25: the sidebar uses the brand's darkest shade (was a fixed navy
      #062947), so it changes with the brand mode. Figma: shell/sidebar aliases primary/900. */
   --shell-sidebar: var(--brand-900);
   --shell-sidebar-hover: rgb(255 255 255 / 0.08);
-  --shell-sidebar-active: rgb(255 255 255 / 0.14); /* white text 8.2:1 teal, 8.5:1 cyan */
-  --shell-sidebar-indicator: var(--brand-200); /* 3px active marker, 5.5:1 */
-  --shell-sidebar-text: #ffffff; /* 12.3:1 teal, 12.9:1 cyan */
-  --shell-sidebar-muted: #afc2d6; /* 6.8:1 teal, 7.1:1 cyan; 5.3:1 on hover */
+  --shell-sidebar-active: rgb(255 255 255 / 0.14); /* white text 9.3:1 forest, 10.4:1 indigo */
+  --shell-sidebar-indicator: var(--brand-200); /* 3px active marker, 9.5:1 or more */
+  --shell-sidebar-text: #ffffff; /* 14.3:1 forest, 16.0:1 indigo */
+  --shell-sidebar-muted: #afc2d6; /* 7.9:1 forest, 8.8:1 indigo; 6.1:1 or more on hover */
 
   /* ---------- Neutrals ---------- */
   --ink: #1d2026; /* headings */
-  --wordmark: #002535; /* the logo's wordmark on light backgrounds */
+  --wordmark: var(--brand-900); /* the logo's wordmark on light backgrounds: 14.3:1 or more */
   --ink-body: #212529;
   --ink-muted: #505756; /* 7.4:1 on white, 6.8:1 on the page background */
   --ink-subtle: #676d7b; /* hints and counts: 5.2:1 white, 4.8:1 page, 4.7:1 sunken */

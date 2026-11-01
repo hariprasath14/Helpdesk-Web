@@ -8,7 +8,7 @@ The backend lives in the separate `helpdesk-api` repository. The overall archite
 
 ## Tech stack
 
-TypeScript · React 19 · Vite · React Router · TanStack Query · orval (API client from OpenAPI) · Tailwind CSS 4 · Radix UI primitives · Lucide icons · Satoshi · Vitest + Testing Library + MSW · Playwright + axe
+TypeScript · React 19 · Vite · React Router · TanStack Query · orval (API client from OpenAPI) · Tailwind CSS 4 · Radix UI primitives · Lucide icons · Nunito · Vitest + Testing Library + MSW · Playwright + axe
 
 ## Run locally
 
@@ -57,7 +57,7 @@ Installed automatically by `npm install` (Husky): **pre-commit** fixes staged fi
 src/
 ├── main.tsx       mounts the app
 ├── config.ts      build settings (VITE_*), checked at startup
-├── brands.ts      the brand packs (Help Teal, Ocean Cyan): names, logos, address-bar colour
+├── brands.ts      the brand packs (Forest, Indigo): names, logos, address-bar colour
 ├── app/           App providers, routes (main address vs workspace), host.ts (which address
 │                  this is), query client, MainLayout (loads the session), shell-config.ts
 │   └── shell/     the app shell: AppShell, Sidebar, TopBar, MobileNav, NavLinks
@@ -80,9 +80,9 @@ src/
 │   ├── http.ts    fetch wrapper behind every API call, ApiError
 │   └── generated/ typed client, models and zod/ schemas from the backend's OpenAPI spec
 │                  (don't edit by hand)
-├── assets/fonts/  Satoshi (self-hosted) and its licence
-├── assets/brands/ one folder per brand: logo-on-dark.svg (white wordmark), logo-on-light.svg
-│                  (#002535 wordmark), mark.svg
+├── assets/brands/ one folder per brand: mark.svg (the nest logo mark)
+├── demo/          the demo build's stand-in API: snapshot.json (sample data from the real API),
+│                  data.ts (dates moved to now), store.ts (ticket rules), handlers.ts (MSW)
 ├── lib/           helpers: cn (class names), initials, password strength, workspace address,
 │                  debounced value, goTo (full-page navigation); Socket.IO client later
 ├── styles/        tokens.css (all colours), fonts.css, global.css (Tailwind setup)
@@ -130,41 +130,41 @@ Every call goes through `apiFetch` in `src/api/http.ts`:
 
 Every signed-in page renders inside `AppShell` (Figma "App shell"):
 
-- **Desktop:** dark sidebar in the brand's darkest shade (brand 900: dark teal for Help Teal) on the left (icons and labels; collapses to icons with tooltips, and the choice is remembered on the device), white top bar, light grey page area with 24px gutters, and a "Skip to content" link for keyboard users.
+- **Desktop:** dark sidebar in the brand's darkest shade (brand 900: dark green for Forest) on the left (icons and labels; collapses to icons with tooltips, and the choice is remembered on the device), white top bar, light grey page area with 24px gutters, and a "Skip to content" link for keyboard users.
 - **Tablet (768–1023px, Step 5b):** the sidebar starts as icons to leave room for the page; expanding it lasts for the visit (from 1024px the collapsed choice is remembered).
 - **Phone (under 768px):** a menu button opens the sidebar as a slide-in panel; "New" becomes a floating round button, and the page area keeps room under its last line so the button never covers it.
 - **One frame, scrolling inside (Step 5b):** the shell fills the window; only the page area (and panels such as drawers) scroll, with thin 6px scrollbars everywhere (`styles/global.css`, tokens `--scrollbar` and `--scrollbar-hover`).
 - **Page header:** the page's actions stay on the title's row at every width; on phones the title wraps beside them and the grey meta drops below (`components/PageHeader.tsx`).
-- **What it shows comes from `src/app/shell-config.ts`.** Each part appears only when a feature provides it, so the app never shows a button that does nothing yet: search (F10), trial pill and Upgrade (F30), the New menu, notifications (F25) and help. Today the workspace shell has Home, Settings at the bottom of the sidebar for admins and supervisors (its own menu: Members, Security, filtered by permission), and the user menu with Your account, Find your other workspaces and Sign out; the design preview lives on the main address at `/design`.
+- **What it shows comes from `src/app/shell-config.ts`.** Each part appears only when a feature provides it, so the app never shows a button that does nothing yet: search (F10), trial pill and Upgrade (F30), the New menu (Ticket, Contact, Company; Contact and Company open their Add drawer over the current page), notifications (F25) and help. Today the workspace shell has Home, Settings at the bottom of the sidebar for admins and supervisors (its own menu: Members, Security, filtered by permission), and the user menu with Your account, Find your other workspaces and Sign out; the design preview lives on the main address at `/design`.
 
 ### Design system
 
 - **Colours** live only in `src/styles/tokens.css`, mirroring the Figma variable collections. Components use semantic Tailwind classes such as `bg-brand-button`, `text-ink-muted` and `bg-danger-bg`; Tailwind's default palette is switched off, so raw colours cannot creep in.
-- **Brand packs:** Helpdesk has two themes, Help Teal (default) and Ocean Cyan. Each deployment uses one, chosen with `VITE_BRAND`. A brand pack is:
+- **Brand packs:** Helpnest has two themes, Forest (default) and Indigo. `VITE_BRAND` sets the deployment's default; each person can pick the other in Your account → Appearance (saved on the server, applied by `MainLayout`). A brand pack is:
 
-  | Part                                            | Where                                                  |
-  | ----------------------------------------------- | ------------------------------------------------------ |
-  | Palette, shades 50 to 900                       | `src/styles/tokens.css`, a `[data-brand='<id>']` block |
-  | Logos (dark background, white background, mark) | `src/assets/brands/<id>/`                              |
-  | Browser tab icon, phone home-screen icon        | `public/brands/<id>/`                                  |
-  | Name and phone address-bar colour (brand 900)   | `src/brands.ts`                                        |
+  | Part                                          | Where                                                  |
+  | --------------------------------------------- | ------------------------------------------------------ |
+  | Palette, shades 50 to 900                     | `src/styles/tokens.css`, a `[data-brand='<id>']` block |
+  | Logo mark                                     | `src/assets/brands/<id>/mark.svg`                      |
+  | Browser tab icon, phone home-screen icon      | `public/brands/<id>/`                                  |
+  | Name and phone address-bar colour (brand 900) | `src/brands.ts`                                        |
 
-  **Changes with the brand:** the palette and every role built from it (buttons 600, links 700, tints 50 and 100, focus ring 500, the sidebar 900 and its active marker 200), the logo mark, the icons and the address-bar colour. **Same in every brand:** neutrals and text colours, status, SLA, priority and feedback colours, the accent orange, Satoshi, spacing, radius, shadows, all components, and the wordmark ink `#002535` (the `wordmark` token).
+  **Changes with the brand:** the palette and every role built from it (buttons 600, links 700, tints 50 and 100, focus ring 500, the sidebar 900 and its active marker 200), the logo mark, the wordmark ink (brand 900, the `wordmark` token), the icons and the address-bar colour. **Same in every brand:** neutrals and text colours, status, SLA, priority and feedback colours, the accent orange, Nunito, spacing, radius, shadows and all components.
 
-  At startup `BrandProvider` applies the brand: `data-brand` on `<html>` (which switches every colour token), the favicon, the home-screen icon and the address-bar colour. Components that need brand files (the logo) read the active brand with `useBrand()`. `index.html` starts with Help Teal, so the first paint is right for the default.
+  At startup `BrandProvider` applies the brand: `data-brand` on `<html>` (which switches every colour token), the favicon, the home-screen icon and the address-bar colour. Components that need brand files (the logo) read the active brand with `useBrand()`. `index.html` starts with Forest, so the first paint is right for the default.
 
-  **Adding a brand:** add a palette block in `tokens.css`, a logo folder, an icon folder, and an entry in `brands.ts`; check every text and background pair passes WCAG AA; the brand test checks the pack is complete.
+  **Adding a brand:** add a palette block in `tokens.css`, a logo folder, an icon folder, an entry in `brands.ts`, and the id in the API's `THEMES` (with a migration); check every text and background pair passes WCAG AA; the brand test checks the pack is complete.
 
-  This is Helpdesk's own look, one per deployment. Customer branding (F32: a workspace's own logo on emails and the web form) is separate.
+  This is Helpnest's own look. Customer branding (F32: a workspace's own logo on emails and the web form) is separate.
 
 - **Sidebar:** brand 900 background; the active item is white at 14% opacity with white text and icon and a 3px brand 200 marker on the left; hover is white at 8%. Status, SLA, priority and feedback colours never change with the brand.
-- **Contrast:** every text and background pair passes WCAG AA (4.5:1); `tokens.css` notes the close ones. Buttons use brand 600, teal links and small teal text use brand 700.
-- **Font:** Satoshi, self-hosted (one variable file for all weights). Its licence allows our own app; it must not be offered to customers as a font choice for their own content.
+- **Contrast:** every text and background pair passes WCAG AA (4.5:1); `tokens.css` notes the close ones. Buttons use brand 600; links and small brand-coloured text use brand 700.
+- **Font:** Nunito, from the npm package `@fontsource-variable/nunito` (one variable file for all weights, imported in `src/styles/fonts.css`; SIL Open Font License).
 - **Accessibility built in:** dialogs, drawers, menus, toasts and tooltips use Radix UI primitives (focus handling, keyboard support, screen-reader roles) styled with our tokens. Icon-only buttons require a label. Focus is always visible. Animations respect "reduce motion".
 - **Shared states:** loading (`TableSkeleton`), empty (`EmptyState`), error with retry and support code (`ErrorState`), no access (`NoAccessState`), toasts bottom right (top centre on phones, clear of the New button) for 5 seconds with at most one action, confirm dialog that starts on Cancel and names the action, right-side drawer with a sticky footer.
 - **Never lose unsaved changes (Step 5b):** `UnsavedChangesGuard` asks "Leave without saving?" when someone leaves a page with unsaved edits (the browser's own prompt for reloading or closing the tab); pages render it only while they have changes (ticket properties, business hours, email sender name, web form text, your name). A `Drawer` that has been typed in asks "Discard your changes?" before closing with X, Escape or a click outside, and before the browser's Back; its own Cancel discards without asking, and saving is never blocked. `TextField` and `SelectField` take `hideLabel` for table cells (the label stays for screen readers).
 - **Class names:** `cn()` joins classes and lets a later class override a conflicting one (`tailwind-merge`).
-- **Logo:** `Logo` shows the active brand's mark (an SVG per brand in `src/assets/brands/<id>/mark.svg`, exported from the Figma component Logo/Mark) and, beside it, the product name from `src/product.ts` as the wordmark: live text in Satoshi bold, white on the dark sidebar and `#002535` (the `wordmark` token) on white. The collapsed sidebar shows the mark alone. Renaming the product renames the logo; there is no wordmark image to redraw. The mark loads as an image, so its internal ids never clash with other SVGs; its colours are its own (the tile matches the brand's 500 shade).
+- **Logo:** `Logo` shows the active brand's mark (an SVG per brand in `src/assets/brands/<id>/mark.svg`, the Figma components Logo/Mark and Logo/Mark · Indigo: a white chat bubble resting in a nest on a tile in the brand's 600 shade) and, beside it, the product name from `src/product.ts` as the wordmark: live text in Nunito ExtraBold, white on the dark sidebar and brand 900 (the `wordmark` token) on white. The collapsed sidebar shows the mark alone. Renaming the product renames the logo; there is no wordmark image to redraw. The mark loads as an image, so its internal ids never clash with other SVGs; its colours are its own.
 
 **Design preview** (`VITE_DESIGN_PREVIEW=true`, local and dev): `/design` shows every token, component and state with a brand switch; `/design/shell` shows the full shell with sample data and a switch between the content, loading, empty, error and no-access states.
 
@@ -190,7 +190,7 @@ Added here as each feature is built (login and 2FA, ticket list, ticket detail a
    - Used link: a link to the workspace. Invalid or missing link: a link to sign-up. Network error: Try again.
 4. **Welcome** (`/` in the workspace): "Welcome to {workspace}, {first name}" with a Get started checklist; items arrive with later features and show "Coming soon".
 
-The server answers the same way whether or not an email is already registered (an existing person gets an "already have an account" email instead), so the form never reveals who has an account. 5. **Step 5b layout (`AuthLayout`, every sign-up, sign-in, password, two-step, invitation and email page):** from 1024px the form on a white column and, beside it, a panel in the brand's sidebar colour saying what Helpdesk does (three points and a few sample tickets with their deadlines; decorative, not real data). Narrower, the logo and a white card as before.
+The server answers the same way whether or not an email is already registered (an existing person gets an "already have an account" email instead), so the form never reveals who has an account. 5. **Step 5b layout (`AuthLayout`, every sign-up, sign-in, password, two-step, invitation and email page):** from 1024px the form on a white column and, beside it, a panel in the brand's sidebar colour saying what Helpnest does (three points and a few sample tickets with their deadlines; decorative, not real data). Narrower, the logo and a white card as before.
 
 #### Login and password (F2)
 
@@ -220,7 +220,7 @@ The server answers the same way whether or not an email is already registered (a
 3. **Members** (`/settings/members`): everyone with role, Owner, two-step On/Off and last active (or Deactivated), with search and a role filter; open invitations with role, inviter and expiry. Supervisors see it read-only.
 4. **Admin actions:** "Invite people" (a drawer: emails separated by commas or new lines, up to 20, and a role with its description; skipped people are listed with the reason); per member "Make Admin/Supervisor/Agent", "Reset two-step verification" (when on) and "Deactivate", both confirmed first, or "Reactivate"; per invitation Resend and Revoke. No actions on the owner or yourself.
 5. **Confirm your password:** when the API answers `REAUTH_REQUIRED`, a dialog asks for the password and then repeats the action (`useReauth()` in `features/members/use-reauth.tsx`).
-6. **Accepting an invitation** (`/invite?token=…`, workspace address): the link is checked first (expired, used and invalid explain themselves); someone new enters a name and a password, someone with a Helpdesk account their password (and code when needed); then the workspace opens.
+6. **Accepting an invitation** (`/invite?token=…`, workspace address): the link is checked first (expired, used and invalid explain themselves); someone new enters a name and a password, someone with a Helpnest account their password (and code when needed); then the workspace opens.
 
 #### Audit log (F5)
 
@@ -352,7 +352,7 @@ The server answers the same way whether or not an email is already registered (a
 #### Notification center (F25)
 
 1. **Bell** (top bar, phones too, `features/notifications/NotificationBell.tsx`, given to the shell as `notifications`): the unread count ("99+" past 99), checked every minute until live updates (F26). Opening it lists the latest 20 with an icon per kind; unread ones are bold with a dot. Choosing one marks it read and opens its ticket; **Mark all as read**.
-2. **Each kind has its own round icon and colour** (Step 5b, `NotificationIcon`, also on Home): assigned teal, @mentions blue, SLA warnings amber, SLA overdue red, customer replies grey.
+2. **Each kind has its own round icon and colour** (Step 5b, `NotificationIcon`, also on Home): assigned in the brand colour, @mentions blue, SLA warnings amber, SLA overdue red, customer replies grey.
 3. **Your account → Notifications:** a switch per kind for email (assigned to me, @mentions, SLA warnings, SLA overdue, customer replies); in the app everything shows.
 4. **Tests:** the shared MSW server answers the notification endpoints with an empty center by default (`src/test/server.ts`), since the bell is on every signed-in page. End-to-end tests that need a second person use `joinAs()` in `e2e/fixtures.ts` (invite through the API, accept in a second browser; not a sign-up).
 
@@ -380,7 +380,7 @@ The server answers the same way whether or not an email is already registered (a
 
 #### Colour theme per person (Step 5b, U5)
 
-1. **Your account → Appearance:** Help Teal or Ocean Cyan, shown as small previews; the choice applies at once, for that person only, on every device they sign in on (saved with `PATCH /me { theme }`).
+1. **Your account → Appearance:** Forest or Indigo, shown as small previews; the choice applies at once, for that person only, on every device they sign in on (saved with `PATCH /me { theme }`).
 2. **How it applies:** `MainLayout` calls `setBrand()` with `me.user.theme`, or the deployment's `VITE_BRAND` when the person has not chosen one; the brand switch in the design preview is unchanged.
 3. **Tests:** `features/account/account.test.tsx`.
 
@@ -439,4 +439,4 @@ Until there is budget for the planned dev setup, dev runs on one Lightsail serve
 HELPDESK_DEV_HOST=<static IP> bash deploy/dev-lightsail/deploy.sh
 ```
 
-It builds with `VITE_API_URL` empty, `VITE_APP_DOMAIN=<dev domain>` (or `HELPDESK_DEV_DOMAIN`), the design preview on and the `help-teal` brand, uploads into `/srv/helpdesk/web/releases/<commit>` and then switches `current` to it, so visitors get the old or the new app, never a mix. The last three releases are kept for a roll back. With `REHEARSAL_DIR` set it builds for the rehearsal on your computer instead (`helpdesk.localhost`).
+It builds with `VITE_API_URL` empty, `VITE_APP_DOMAIN=<dev domain>` (or `HELPDESK_DEV_DOMAIN`), the design preview on and the `forest` brand, uploads into `/srv/helpdesk/web/releases/<commit>` and then switches `current` to it, so visitors get the old or the new app, never a mix. The last three releases are kept for a roll back. With `REHEARSAL_DIR` set it builds for the rehearsal on your computer instead (`helpdesk.localhost`).

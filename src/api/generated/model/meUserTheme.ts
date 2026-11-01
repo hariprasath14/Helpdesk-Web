@@ -13,6 +13,6 @@ export type MeUserTheme = typeof MeUserTheme[keyof typeof MeUserTheme] | null;
 
 
 export const MeUserTheme = {
-  'help-teal': 'help-teal',
-  'ocean-cyan': 'ocean-cyan',
+  forest: 'forest',
+  indigo: 'indigo',
 } as const;

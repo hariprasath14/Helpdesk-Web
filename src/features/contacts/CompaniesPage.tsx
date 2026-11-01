@@ -1,7 +1,7 @@
-import { useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { Building, Plus } from 'lucide-react';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link } from 'react-router';
 import {
   getApiV1Companies,
   getGetApiV1CompaniesQueryKey,
@@ -10,20 +10,15 @@ import { Button } from '../../components/Button';
 import { PageHeader } from '../../components/PageHeader';
 import { Skeleton } from '../../components/Skeleton';
 import { EmptyState, ErrorState } from '../../components/StateMessage';
-import { useToast } from '../../components/toast-context';
 import { useDebouncedValue } from '../../lib/use-debounced-value';
-import { CompanyDrawer } from './CompanyDrawer';
 import { countText } from './contact-pages';
 import { SearchBar } from './ContactList';
-import { refreshDirectory } from './directory';
+import { NewCompanyDrawer } from './NewRecordDrawers';
 
 const COLUMNS = 'md:grid-cols-[minmax(0,2fr)_minmax(0,2fr)_minmax(0,1fr)]';
 
 /** Companies: the organisations your contacts belong to, A to Z. */
 export function CompaniesPage() {
-  const queryClient = useQueryClient();
-  const toast = useToast();
-  const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [adding, setAdding] = useState(false);
   const q = useDebouncedValue(search.trim(), 300);
@@ -151,15 +146,9 @@ export function CompaniesPage() {
         {body}
       </section>
       {adding && (
-        <CompanyDrawer
+        <NewCompanyDrawer
           onClose={() => {
             setAdding(false);
-          }}
-          onSaved={(company, message) => {
-            setAdding(false);
-            void refreshDirectory(queryClient);
-            toast({ tone: 'success', message });
-            void navigate(`/companies/${company.id}`);
           }}
         />
       )}

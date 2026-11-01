@@ -72,7 +72,8 @@
   --color-neutral-dot: var(--neutral-dot);
   --color-accent: var(--accent);
 
-  --font-sans: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans:
+    'Nunito Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --shadow-sm: var(--shadow-sm);
   --shadow-md: var(--shadow-md);

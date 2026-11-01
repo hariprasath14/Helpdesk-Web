@@ -629,6 +629,35 @@ describe('more contact and company flows', () => {
       expect(router.state.location.pathname).toBe('/companies/co9');
     });
   });
+
+  it('adds a contact or a company from the New menu on any page', async () => {
+    const calls = directoryApi();
+    const user = userEvent.setup();
+    const { router } = renderRoute('/companies/co1', { host: WORKSPACE });
+    const openNew = async (item: string) => {
+      // The desktop New button comes first; the phone floating button is the second.
+      await user.click(nth(await screen.findAllByRole('button', { name: /^New/ })));
+      await user.click(screen.getByRole('menuitem', { name: item }));
+    };
+
+    await openNew('Company');
+    expect(await screen.findByRole('dialog', { name: 'Add a company' })).toBeInTheDocument();
+    await user.keyboard('{Escape}');
+    expect(screen.queryByRole('dialog', { name: 'Add a company' })).not.toBeInTheDocument();
+    expect(router.state.location.pathname).toBe('/companies/co1');
+
+    await openNew('Contact');
+    const drawer = await screen.findByRole('dialog', { name: 'Add a contact' });
+    await user.type(within(drawer).getByRole('textbox', { name: /^Name/ }), 'Sara Khan');
+    await user.type(within(drawer).getByRole('textbox', { name: 'Email' }), 'sara@acme.com');
+    await user.click(within(drawer).getByRole('button', { name: 'Add contact' }));
+    await waitFor(() => {
+      expect(router.state.location.pathname).toBe('/contacts/c9');
+    });
+    expect(sent(calls, 'POST', '/api/v1/contacts')).toHaveLength(1);
+    expect(await screen.findByText('Contact added.')).toBeInTheDocument();
+    expect(screen.queryByRole('dialog', { name: 'Add a contact' })).not.toBeInTheDocument();
+  });
 });
 
 describe('custom field values', () => {

@@ -101,7 +101,7 @@ export const PostApiV1AuthVerifyEmailResponse = zod.object({
   "id": zod.string(),
   "name": zod.string(),
   "email": zod.string(),
-  "theme": zod.union([zod.enum(['help-teal', 'ocean-cyan']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
+  "theme": zod.union([zod.enum(['forest', 'indigo']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
 }),
   "workspace": zod.object({
   "id": zod.string(),
@@ -134,7 +134,7 @@ export const GetApiV1MeResponse = zod.object({
   "id": zod.string(),
   "name": zod.string(),
   "email": zod.string(),
-  "theme": zod.union([zod.enum(['help-teal', 'ocean-cyan']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
+  "theme": zod.union([zod.enum(['forest', 'indigo']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
 }),
   "workspace": zod.object({
   "id": zod.string(),
@@ -164,7 +164,7 @@ export const patchApiV1MeBodyNameMax = 100;
 
 export const PatchApiV1MeBody = zod.object({
   "name": zod.string().min(patchApiV1MeBodyNameMin).max(patchApiV1MeBodyNameMax).optional(),
-  "theme": zod.union([zod.enum(['help-teal', 'ocean-cyan']),zod.null()]).optional().describe('Your colour theme, on every device; null goes back to the deployment\'s brand')
+  "theme": zod.union([zod.enum(['forest', 'indigo']),zod.null()]).optional().describe('Your colour theme, on every device; null goes back to the deployment\'s brand')
 })
 
 export const patchApiV1MeResponseTwoFactorRecoveryCodesLeftMin = -9007199254740991;
@@ -177,7 +177,7 @@ export const PatchApiV1MeResponse = zod.object({
   "id": zod.string(),
   "name": zod.string(),
   "email": zod.string(),
-  "theme": zod.union([zod.enum(['help-teal', 'ocean-cyan']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
+  "theme": zod.union([zod.enum(['forest', 'indigo']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
 }),
   "workspace": zod.object({
   "id": zod.string(),
@@ -223,7 +223,7 @@ export const PostApiV1MePasswordResponse = zod.object({
   "id": zod.string(),
   "name": zod.string(),
   "email": zod.string(),
-  "theme": zod.union([zod.enum(['help-teal', 'ocean-cyan']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
+  "theme": zod.union([zod.enum(['forest', 'indigo']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
 }),
   "workspace": zod.object({
   "id": zod.string(),

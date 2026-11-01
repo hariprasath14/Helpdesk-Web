@@ -24,6 +24,8 @@ export interface UserMenuActions {
   findWorkspaces: () => void;
   signOut: () => void;
   newTicket: () => void;
+  newContact: () => void;
+  newCompany: () => void;
   searchTickets: (query: string) => void;
 }
 
@@ -39,7 +41,11 @@ export function workspaceShellConfig(me: Me, actions: UserMenuActions): ShellCon
       { label: 'Contacts', to: '/contacts', icon: UsersRound },
       { label: 'Companies', to: '/companies', icon: Building },
     ],
-    newActions: [{ label: 'Ticket', icon: Ticket, onSelect: actions.newTicket }],
+    newActions: [
+      { label: 'Ticket', icon: Ticket, onSelect: actions.newTicket },
+      { label: 'Contact', icon: UsersRound, onSelect: actions.newContact },
+      { label: 'Company', icon: Building, onSelect: actions.newCompany },
+    ],
     search: { placeholder: 'Search tickets', onSearch: actions.searchTickets },
     // Shown when at least one settings page is open to this person (agents: Canned responses).
     ...(SETTINGS_PAGES.some((page) => me.permissions.includes(page.permission))

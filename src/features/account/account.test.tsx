@@ -27,18 +27,18 @@ describe('your account', () => {
       signedIn(),
       http.patch(apiUrl('/api/v1/me'), async ({ request }) => {
         sent = await request.json();
-        return HttpResponse.json({ ...me, user: { ...me.user, theme: 'ocean-cyan' } });
+        return HttpResponse.json({ ...me, user: { ...me.user, theme: 'indigo' } });
       }),
     );
     const user = userEvent.setup();
     renderRoute('/account?tab=appearance', { host: WORKSPACE });
-    const teal = await screen.findByRole('radio', { name: /Help Teal/ });
-    expect(teal).toBeChecked();
-    await user.click(screen.getByRole('radio', { name: /Ocean Cyan/ }));
-    expect(await screen.findByText('Theme changed to Ocean Cyan.')).toBeInTheDocument();
-    expect(sent).toEqual({ theme: 'ocean-cyan' });
-    expect(screen.getByRole('radio', { name: /Ocean Cyan/ })).toBeChecked();
-    expect(document.documentElement.dataset.brand).toBe('ocean-cyan');
+    const forest = await screen.findByRole('radio', { name: /Forest/ });
+    expect(forest).toBeChecked();
+    await user.click(screen.getByRole('radio', { name: /Indigo/ }));
+    expect(await screen.findByText('Theme changed to Indigo.')).toBeInTheDocument();
+    expect(sent).toEqual({ theme: 'indigo' });
+    expect(screen.getByRole('radio', { name: /Indigo/ })).toBeChecked();
+    expect(document.documentElement.dataset.brand).toBe('indigo');
   });
 
   it('saves a new name, sending the CSRF token, and shows it at once', async () => {

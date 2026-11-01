@@ -236,7 +236,7 @@ export const PostApiV1InvitationsAcceptResponse = zod.object({
   "id": zod.string(),
   "name": zod.string(),
   "email": zod.string(),
-  "theme": zod.union([zod.enum(['help-teal', 'ocean-cyan']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
+  "theme": zod.union([zod.enum(['forest', 'indigo']),zod.null()]).describe('The colour theme this person chose; null keeps the deployment\'s brand')
 }),
   "workspace": zod.object({
   "id": zod.string(),

@@ -92,7 +92,7 @@ export function DesignPreviewPage() {
         </div>
       </Section>
 
-      <Section title="Typography (Satoshi)">
+      <Section title="Typography (Nunito)">
         <p className="text-xl font-bold text-ink">Page title, 20 bold</p>
         <p className="text-base font-bold text-ink">Section title, 16 bold</p>
         <p className="text-sm">

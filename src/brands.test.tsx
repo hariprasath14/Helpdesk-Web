@@ -10,17 +10,17 @@ import { BrandSwitch } from './features/design-preview/BrandSwitch';
 
 beforeEach(() => {
   document.head.innerHTML =
-    '<meta name="theme-color" content="#053c36" />' +
-    '<link rel="icon" href="/brands/help-teal/favicon.svg" />' +
-    '<link rel="apple-touch-icon" href="/brands/help-teal/apple-touch-icon.png" />';
+    '<meta name="theme-color" content="#12301d" />' +
+    '<link rel="icon" href="/brands/forest/favicon.svg" />' +
+    '<link rel="apple-touch-icon" href="/brands/forest/apple-touch-icon.png" />';
 });
 afterEach(() => {
-  applyBrand('help-teal');
+  applyBrand('forest');
 });
 
 describe('brands', () => {
   it('has a complete pack for every brand', () => {
-    expect(BRAND_IDS).toEqual(['help-teal', 'ocean-cyan']);
+    expect(BRAND_IDS).toEqual(['forest', 'indigo']);
     for (const id of BRAND_IDS) {
       const { logo, themeColor, label } = BRANDS[id];
       expect(label).not.toBe('');
@@ -29,39 +29,39 @@ describe('brands', () => {
       expect(logo.mark).not.toBe('');
     }
     // Each brand has its own artwork, not a copy of another brand's.
-    expect(BRANDS['help-teal'].logo.mark).not.toBe(BRANDS['ocean-cyan'].logo.mark);
+    expect(BRANDS.forest.logo.mark).not.toBe(BRANDS.indigo.logo.mark);
   });
 
   it('applies a brand to the colours, icons and phone address bar', () => {
-    applyBrand('ocean-cyan');
+    applyBrand('indigo');
 
-    expect(document.documentElement.dataset.brand).toBe('ocean-cyan');
+    expect(document.documentElement.dataset.brand).toBe('indigo');
     expect(document.querySelector('meta[name="theme-color"]')).toHaveAttribute(
       'content',
-      '#033744',
+      '#1e1b4b',
     );
     expect(document.querySelector('link[rel="icon"]')).toHaveAttribute(
       'href',
-      '/brands/ocean-cyan/favicon.svg',
+      '/brands/indigo/favicon.svg',
     );
     expect(document.querySelector('link[rel="apple-touch-icon"]')).toHaveAttribute(
       'href',
-      '/brands/ocean-cyan/apple-touch-icon.png',
+      '/brands/indigo/apple-touch-icon.png',
     );
   });
 
   it('recognises only known brand ids', () => {
-    expect(isBrandId('help-teal')).toBe(true);
+    expect(isBrandId('forest')).toBe(true);
     expect(isBrandId('purple')).toBe(false);
     expect(isBrandId(undefined)).toBe(false);
   });
 
-  it('is chosen by VITE_BRAND, defaulting to Help Teal', () => {
+  it('is chosen by VITE_BRAND, defaulting to Forest', () => {
     const base = { VITE_API_URL: 'http://localhost:4000' };
-    expect(loadConfig(base).brand).toBe('help-teal');
-    expect(loadConfig({ ...base, VITE_BRAND: 'ocean-cyan' }).brand).toBe('ocean-cyan');
+    expect(loadConfig(base).brand).toBe('forest');
+    expect(loadConfig({ ...base, VITE_BRAND: 'indigo' }).brand).toBe('indigo');
     expect(() => loadConfig({ ...base, VITE_BRAND: 'purple' })).toThrow(
-      /VITE_BRAND: must be one of help-teal, ocean-cyan/,
+      /VITE_BRAND: must be one of forest, indigo/,
     );
   });
 });
@@ -69,7 +69,7 @@ describe('brands', () => {
 describe('logo', () => {
   it('starts in the deployment brand and follows a brand switch', async () => {
     render(
-      <BrandProvider initial="ocean-cyan">
+      <BrandProvider initial="indigo">
         <Logo />
         <Logo variant="mark" />
         <Logo onDark={false} />
@@ -79,15 +79,15 @@ describe('logo', () => {
     const [full, mark, onLight] = screen.getAllByRole('img', { name: PRODUCT_NAME });
     const markOf = (element: HTMLElement | undefined) =>
       element?.tagName === 'IMG' ? element : element?.querySelector('img');
-    expect(markOf(full)).toHaveAttribute('src', BRANDS['ocean-cyan'].logo.mark);
-    expect(markOf(mark)).toHaveAttribute('src', BRANDS['ocean-cyan'].logo.mark);
-    expect(markOf(onLight)).toHaveAttribute('src', BRANDS['ocean-cyan'].logo.mark);
+    expect(markOf(full)).toHaveAttribute('src', BRANDS.indigo.logo.mark);
+    expect(markOf(mark)).toHaveAttribute('src', BRANDS.indigo.logo.mark);
+    expect(markOf(onLight)).toHaveAttribute('src', BRANDS.indigo.logo.mark);
     // The wordmark is the product name as text, so renaming the product renames the logo.
     expect(full).toHaveTextContent(PRODUCT_NAME);
-    expect(document.documentElement.dataset.brand).toBe('ocean-cyan');
+    expect(document.documentElement.dataset.brand).toBe('indigo');
 
-    await userEvent.click(screen.getByText('Help Teal'));
-    expect(markOf(full)).toHaveAttribute('src', BRANDS['help-teal'].logo.mark);
-    expect(document.documentElement.dataset.brand).toBe('help-teal');
+    await userEvent.click(screen.getByText('Forest'));
+    expect(markOf(full)).toHaveAttribute('src', BRANDS.forest.logo.mark);
+    expect(document.documentElement.dataset.brand).toBe('forest');
   });
 });

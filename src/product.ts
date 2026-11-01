@@ -4,4 +4,4 @@
  * The API has the same constant in its src/product.ts; change both (docs/BRANDING.md in the API
  * repo has the steps).
  */
-export const PRODUCT_NAME = 'Helpdesk';
+export const PRODUCT_NAME = 'Helpnest';

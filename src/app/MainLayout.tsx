@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Navigate, Outlet, useLocation, useNavigate } from 'react-router';
 import { useGetApiV1Me } from '../api/generated/accounts/accounts';
 import { ApiError } from '../api/http';
@@ -6,6 +6,7 @@ import { Spinner } from '../components/Spinner';
 import { ErrorState } from '../components/StateMessage';
 import { config } from '../config';
 import { loginPath } from '../features/auth/next-path';
+import { NewCompanyDrawer, NewContactDrawer } from '../features/contacts/NewRecordDrawers';
 import { useSignOut } from '../features/auth/use-sign-out';
 import { goTo } from '../lib/go-to';
 import { TwoFactorRequiredPage } from '../features/two-factor/TwoFactorRequiredPage';
@@ -34,6 +35,8 @@ export function MainLayout() {
   const location = useLocation();
   const navigate = useNavigate();
   const signOut = useSignOut();
+  // New → Contact or Company opens its drawer over whatever page is open.
+  const [creating, setCreating] = useState<'contact' | 'company' | null>(null);
 
   if (me.isPending) {
     return (
@@ -83,6 +86,12 @@ export function MainLayout() {
               newTicket: () => {
                 void navigate('/tickets/new');
               },
+              newContact: () => {
+                setCreating('contact');
+              },
+              newCompany: () => {
+                setCreating('company');
+              },
               searchTickets: (query) => {
                 void navigate(
                   `/tickets?${new URLSearchParams({ view: 'all', q: query }).toString()}`,
@@ -108,6 +117,20 @@ export function MainLayout() {
             </p>
           )}
           <Outlet />
+          {creating === 'contact' && (
+            <NewContactDrawer
+              onClose={() => {
+                setCreating(null);
+              }}
+            />
+          )}
+          {creating === 'company' && (
+            <NewCompanyDrawer
+              onClose={() => {
+                setCreating(null);
+              }}
+            />
+          )}
         </AppShell>
       </LiveProvider>
     </SessionContext>

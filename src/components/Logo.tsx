@@ -12,9 +12,9 @@ interface LogoProps {
 }
 
 /**
- * The logo in the active brand: the mark (support agent in a yellow chat bubble on a brand tile,
+ * The logo in the active brand: the mark (a chat bubble resting in a nest, on a brand tile,
  * one SVG per brand in assets/brands/<id>, loaded as an image so its internal ids never clash with
- * other SVGs) and the product name as the wordmark, set in Satoshi. The wordmark is live text, so
+ * other SVGs) and the product name as the wordmark, set in Nunito. The wordmark is live text, so
  * renaming the product (src/product.ts) changes the logo too.
  */
 export function Logo({ variant = 'full', onDark = true, className }: LogoProps) {
