@@ -12,7 +12,7 @@ import { Skeleton } from '../../components/Skeleton';
 import { EmptyState, ErrorState } from '../../components/StateMessage';
 import { useDebouncedValue } from '../../lib/use-debounced-value';
 import { countText } from './contact-pages';
-import { SearchBar } from './ContactList';
+import { LIST_HEADINGS, ListCard, ListScroll, SearchBar, STICKY_HEADINGS } from './ContactList';
 import { NewCompanyDrawer } from './NewRecordDrawers';
 
 const COLUMNS = 'md:grid-cols-[minmax(0,2fr)_minmax(0,2fr)_minmax(0,1fr)]';
@@ -80,11 +80,8 @@ export function CompaniesPage() {
           </div>
         )
       ) : (
-        <>
-          <div
-            aria-hidden
-            className={`mt-4 hidden gap-4 border-b border-border pb-2 text-xs font-medium text-ink-subtle md:grid ${COLUMNS}`}
-          >
+        <ListScroll>
+          <div aria-hidden className={`${LIST_HEADINGS} ${STICKY_HEADINGS} ${COLUMNS}`}>
             <span>Name</span>
             <span>Domains</span>
             <span>Contacts</span>
@@ -123,7 +120,7 @@ export function CompaniesPage() {
               </Button>
             </div>
           )}
-        </>
+        </ListScroll>
       );
   }
 
@@ -136,7 +133,7 @@ export function CompaniesPage() {
           : {})}
         actions={addButton}
       />
-      <section className="rounded-xl border border-border bg-surface px-5 pt-4 pb-2">
+      <ListCard>
         <SearchBar
           label="Search companies"
           placeholder="Name or domain"
@@ -144,7 +141,7 @@ export function CompaniesPage() {
           onSearch={setSearch}
         />
         {body}
-      </section>
+      </ListCard>
       {adding && (
         <NewCompanyDrawer
           onClose={() => {

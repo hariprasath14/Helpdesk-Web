@@ -7,7 +7,7 @@ import { SelectField } from '../../components/SelectField';
 import { useDebouncedValue } from '../../lib/use-debounced-value';
 import { CompanyPicker, type CompanyRef } from './CompanyPicker';
 import { countText, SORT_OPTIONS, useContactPages } from './contact-pages';
-import { ContactList, SearchBar } from './ContactList';
+import { ContactList, ListCard, SearchBar } from './ContactList';
 import { NewContactDrawer } from './NewRecordDrawers';
 
 /** Contacts: everyone your team supports. Every member can search, add and edit them. */
@@ -42,7 +42,7 @@ export function ContactsPage() {
           </Button>
         }
       />
-      <section className="rounded-xl border border-border bg-surface px-5 pt-4 pb-2">
+      <ListCard>
         <SearchBar
           label="Search contacts"
           placeholder="Name, email or phone"
@@ -85,8 +85,9 @@ export function ContactsPage() {
               </Button>
             ),
           }}
+          fill
         />
-      </section>
+      </ListCard>
       {adding && (
         <NewContactDrawer
           onClose={() => {

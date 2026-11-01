@@ -322,6 +322,7 @@ The server answers the same way whether or not an email is already registered (a
 4. **Companies** (sidebar): name, domains and contact count, with search and "Load more". **Company page** (Step 5b: tickets and contacts in the wide column, details beside them): details (domains, phone, website link, note, custom fields), its contacts with search, sort and "Add contact" (the company is pre-chosen), Edit, and Delete for admins and supervisors (the dialog says how many contacts stay, without a company).
 5. **Add or edit a company** (a drawer): name, email domains (one per box; free email services are refused by the API), phone, website, note and company custom fields.
 6. **Caches:** any contact or company change marks every contact and company query stale (`refreshDirectory()`), because counts and names show on both sides.
+7. **Long lists** (`ListCard`, `ListScroll` in `ContactList.tsx`): from a tablet up the Contacts and Companies cards fill the page; the search and column headings stay at the top and only the rows scroll inside the card, like the ticket list. On phones the page scrolls as usual. Details cards wrap long emails and web addresses inside the card.
 
 #### Teams (F8)
 

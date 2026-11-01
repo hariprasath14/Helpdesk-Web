@@ -37,6 +37,35 @@ export function SearchBar({ search, onSearch, placeholder, label, children }: Se
   );
 }
 
+/**
+ * The card on the Contacts and Companies pages. From a tablet up it fills the page, so the search
+ * stays at the top and the rows scroll inside it (ListScroll), like the ticket list.
+ */
+export function ListCard({ children }: { children: ReactNode }) {
+  return (
+    <section className="flex flex-col rounded-xl border border-border bg-surface px-5 pt-4 pb-2 md:min-h-0 md:flex-1">
+      {children}
+    </section>
+  );
+}
+
+/**
+ * The rows' scrolling part of a ListCard, reaching the card's edges so the scrollbar sits there.
+ * Relative, so screen-reader-only text in the rows stays inside it.
+ */
+export function ListScroll({ children }: { children: ReactNode }) {
+  return (
+    <div className="relative md:-mx-5 md:mt-4 md:min-h-0 md:flex-1 md:overflow-y-auto md:px-5">
+      {children}
+    </div>
+  );
+}
+
+/** Column headings above a list's rows; in a ListScroll they stay in view while the rows scroll. */
+export const LIST_HEADINGS =
+  'mt-4 hidden gap-4 border-b border-border bg-surface pb-2 text-xs font-medium text-ink-subtle md:grid';
+export const STICKY_HEADINGS = 'md:sticky md:top-0 md:z-10 md:mt-0';
+
 interface ContactListProps {
   pages: ReturnType<typeof useContactPages>;
   /** Hide the company column (on a company's own page). */
@@ -44,10 +73,18 @@ interface ContactListProps {
   /** What to show when there are no contacts at all (no search). */
   empty: { title: string; description: string; actions?: ReactNode };
   searching: boolean;
+  /** In a ListCard: the rows scroll inside it under fixed headings (the Contacts page). */
+  fill?: boolean;
 }
 
 /** Contact rows: name and job title, email, company, phone, last update; then "Load more". */
-export function ContactList({ pages, showCompany = true, empty, searching }: ContactListProps) {
+export function ContactList({
+  pages,
+  showCompany = true,
+  empty,
+  searching,
+  fill = false,
+}: ContactListProps) {
   if (pages.isPending) {
     return (
       <div role="status" aria-label="Loading contacts" className="flex flex-col gap-3 py-4">
@@ -84,12 +121,9 @@ export function ContactList({ pages, showCompany = true, empty, searching }: Con
   const columns = showCompany
     ? 'md:grid-cols-[minmax(0,1.6fr)_minmax(0,1.6fr)_minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,0.8fr)]'
     : 'md:grid-cols-[minmax(0,1.6fr)_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,0.8fr)]';
-  return (
+  const list = (
     <>
-      <div
-        aria-hidden
-        className={`mt-4 hidden gap-4 border-b border-border pb-2 text-xs font-medium text-ink-subtle md:grid ${columns}`}
-      >
+      <div aria-hidden className={`${LIST_HEADINGS} ${fill ? STICKY_HEADINGS : ''} ${columns}`}>
         <span>Name</span>
         <span>Email</span>
         {showCompany && <span>Company</span>}
@@ -148,4 +182,5 @@ export function ContactList({ pages, showCompany = true, empty, searching }: Con
       )}
     </>
   );
+  return fill ? <ListScroll>{list}</ListScroll> : list;
 }
