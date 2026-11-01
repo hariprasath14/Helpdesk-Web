@@ -1,0 +1,12 @@
+// The portfolio demo on Cloudflare Workers (static files only, no server code).
+// Cloudflare runs `npm run build:demo`, then `npx wrangler deploy` uploads dist/ as it is.
+// Without this file, wrangler detects Vite and rebuilds the normal app over the demo.
+{
+  "name": "helpdesk-web",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./dist",
+    // Addresses like /tickets/5 get index.html, and the app's router takes over.
+    "not_found_handling": "single-page-application",
+  },
+}
