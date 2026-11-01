@@ -17,14 +17,15 @@ export function CustomFieldsList({
   const shown = shownFields(fields, values);
   if (shown.length === 0) return null;
   return (
-    <dl className="grid gap-x-4 gap-y-3 sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)]">
+    // The same columns as the details above it (Detail in ContactPage), so the values line up.
+    <dl className="grid gap-x-4 gap-y-3 sm:grid-cols-[minmax(0,7rem)_minmax(0,1fr)]">
       {shown.map((field) => (
         <div key={field.id} className="contents">
           <dt className="text-xs text-ink-muted sm:pt-0.5">
             {field.label}
             {field.archived && <span className="ml-1 text-ink-subtle">(archived)</span>}
           </dt>
-          <dd className="-mt-2 text-sm break-words whitespace-pre-line text-ink sm:mt-0">
+          <dd className="-mt-2 min-w-0 text-sm wrap-anywhere whitespace-pre-line text-ink sm:mt-0">
             {hasValue(values[field.key]) ? formatCustomValue(field, values[field.key]) : '—'}
           </dd>
         </div>

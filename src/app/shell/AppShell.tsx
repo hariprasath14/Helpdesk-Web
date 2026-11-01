@@ -61,7 +61,9 @@ export function AppShell({ config, children }: AppShellProps) {
           tabIndex={-1}
           className={cn(
             // A column, so a page can fill it and scroll inside itself (the ticket list, Step 5b).
-            'flex flex-1 flex-col overflow-y-auto px-4 py-5 outline-none md:px-6',
+            // Relative, so screen-reader-only text (absolutely placed) scrolls with the page
+            // instead of stretching the whole window and adding a second scrollbar.
+            'relative flex flex-1 flex-col overflow-y-auto px-4 py-5 outline-none md:px-6',
             // Room under the last line on phones, so the floating New button never covers it.
             hasFab && 'max-md:pb-24',
           )}

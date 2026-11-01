@@ -71,7 +71,8 @@ function TargetsTable({ policy }: { policy: SlaPolicy }) {
               </th>
               <td className={cell}>{durationText(target.reply)}</td>
               <td className={cell}>{durationText(target.resolve)}</td>
-              <td className={cn(cell, 'text-ink-muted')}>
+              {/* The only column that wraps, so the table fits a phone. */}
+              <td className={cn(cell, 'whitespace-normal text-ink-muted')}>
                 {target.hours === 'calendar' ? 'Round the clock' : 'Business hours'}
               </td>
             </tr>

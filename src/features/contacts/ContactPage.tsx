@@ -27,12 +27,15 @@ import { refreshDirectory } from './directory';
 
 const crumbs = (name: string) => [{ label: 'Contacts', to: '/contacts' }, { label: name }];
 
-/** A label and value row in a details card. */
+/**
+ * A label and value row in a details card. Long values (emails, web addresses) wrap anywhere,
+ * so they stay inside the card.
+ */
 export function Detail({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="contents">
       <dt className="text-xs text-ink-muted sm:pt-0.5">{label}</dt>
-      <dd className="-mt-2 min-w-0 text-sm break-words text-ink sm:mt-0">{children}</dd>
+      <dd className="-mt-2 min-w-0 text-sm wrap-anywhere text-ink sm:mt-0">{children}</dd>
     </div>
   );
 }
