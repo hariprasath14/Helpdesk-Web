@@ -2,7 +2,7 @@
 // Cloudflare runs `npm run build:demo`, then `npx wrangler deploy` uploads dist/ as it is.
 // Without this file, wrangler detects Vite and rebuilds the normal app over the demo.
 {
-  "name": "helpdesk-web",
+  "name": "helpdesk-demo",
   "compatibility_date": "2025-09-01",
   "assets": {
     "directory": "./dist",

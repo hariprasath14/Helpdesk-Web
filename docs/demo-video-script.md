@@ -24,7 +24,7 @@ A 2½-minute screen recording of the demo build, and how to show the project liv
 
 Description for the video (YouTube, unlisted, or LinkedIn):
 
-> A multi-tenant help desk built end to end: React + TypeScript, Fastify, PostgreSQL with row-level security, a pg-boss job worker, AWS CDK. Try the live demo: DEMO_LINK. Code: https://github.com/hariprasath14/Helpdesk-Web and https://github.com/hariprasath14/Helpdesk-API
+> A multi-tenant help desk built end to end: React + TypeScript, Fastify, PostgreSQL with row-level security, a pg-boss job worker, AWS CDK. Try the live demo: https://helpdesk-demo.hari-prasath-s.workers.dev. Code: https://github.com/hariprasath14/Helpdesk-Web and https://github.com/hariprasath14/Helpdesk-API
 
 ## Showing it in an interview
 
